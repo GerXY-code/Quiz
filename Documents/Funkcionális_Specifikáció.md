@@ -3,9 +3,9 @@ Funkcionális Specifikáció
 
 Áttekintés
 -----------
- - A projektben a célunk az, hogy létrehozzunk egy többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak hasznánli kvízek kitöltésére.
- - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltése nem korlátozhatja semmi.
- - A kérdőívek teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
+ - A projektben a célunk az, hogy létrehozzunk egy többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak használni kvízek kitöltésére.
+ - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltését nem korlátozhatja semmi.
+ - A kérdőíveket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
 
 Jelenlegi helyzet
 ------------------
@@ -19,7 +19,7 @@ Követelménylista
 | Jogosultság | KJ2 | Regisztráció | 1.0 | A felhasználó a nevének, email címének és jelszavának bevitelével regisztrálhatja magát. Továbbá, ezen a felületen megjelölheti, hogy milyen szintű felhasználó szeretne lenni. Ha a valamelyik hiányzik vagy a követelményeknek nem tesz eleget, akkor a rendszer figyelmezteti a felhasználót. |
 | Felület | KF1 | Bejelentkezési felület | 1.0 | A felhasználók itt tudnak bejelentkezni a rendszerbe. |
 | Felület | KF2 | Regisztrációs felület | 1.0 | Felhasználók itt tudnak regisztrálni a rendszerbe. |
-| Felület | KF3 | Kvíz kiválasztás | 1.0 | A felhasználó kiválaszt egy kvít, amelyre el szeretné küldeni a válaszait. (Vagy be kell írnia egy kódot, amivel be tud csatlakozni, mint quizizzen?) |
+| Felület | KF3 | Kvíz kiválasztás | 1.0 | A felhasználó kiválaszt egy kvízt, amelyre el szeretné küldeni a válaszait. (Vagy be kell írnia egy kódot, amivel be tud csatlakozni, mint quizizzen?) |
 | Felület | KF4 | Kvíz megoldása | 1.0 | A felhasználó elkezdi megoldani az adott kvízt. Minden elindított kvízjáték alatt egy kérdésre csak egyszerválaszolhat. |
 | Felület | KF5 | Kvíz készítése | 1.0 | A felhasználó itt készíthet saját kvízeket. Több kérdést is hozzáadhat, melyeknek különböző típusú válaszlehetőségei lehetnek. Akkor tekintunk egy kvízt késznek, ha minden kérdésre adott a felhasználó megoldást. |
 | Felület | KF6 | Kvíz szerkesztése | 1.0 | Ezen a felületen végezhet a felhasználó módosításokat a meglévő kvízeihez, illetve törölheti azokat. (Le is tölthetné őket?)|
@@ -34,7 +34,7 @@ Igényelt üzleti olyamatok modellje
 ------------------------------------
  - Kvízek létrehozása és azok központi tárolása.
  - Minden kitöltött kvíz eredményének, illetve felhasználó válaszainak tárolása.
- - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limite (pl: 60 másodperc).
+ - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
 
 
 Használati esetek
