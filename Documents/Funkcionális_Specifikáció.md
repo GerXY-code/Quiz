@@ -52,10 +52,10 @@ Képernyőtervek
 Forgatókönyvek
 ------------------
 
- - Regisztráció: A felhasználó megadja a bejelentkezési adatait.
- - Bejelentkezés után megadhat néhány további adatot. Ezt a Profil menü alatt teheti meg.
+ - Regisztráció: A felhasználó megadja a bejelentkezési adatait. Bejelentkezés után megadhat néhány további adatot. Ezt a Profil menü alatt teheti meg.
  - Bejelentkezés: A felhasználó megadja a bejelentkezési adatatait. Ha helyes a megadott jelszó és felhasználónév, akkor tovább enged a rendszer. Ellenkező esetben a rendszer kiír a problémának a megfelelő hibaüzenetet.
  - Kvíz kitöltése: A felhasználó megadja a kvíz bejelentkezési kódját, vagy választ egyet a publikusak közül. Értelemszerűen kitölti azokat, amennyiben szükséges megad további információkat. A kitöltés végeztével a rendszer automatikus kiértékelés után közli a felhasználóval az eredményét.
+ - Kvíz létrehozása: A felhasználó létrehozhat kvízt, ahol megadhat témakört, kérdéseket, válaszokat, illetve megadhatja, hogy ez publikus vagy privát kvíz legyen-e. Ha publikus lesz, akkor bárki kitöltheti, ha privát, akkor csak a kóddal rendelkező felhasználók.
  
 
 Vágyálomrendszer
