@@ -58,9 +58,12 @@ Használati esetek
  
  
 Képernyőtervek
+------------------
 
 Forgatókönyvek
+------------------
 
 Vágyálomrendszer
+------------------
 
 Fogalomszótár
