@@ -55,3 +55,12 @@ Használati esetek
  - A felhasználó megadja a kvíz bejelentkezési kódját.
  - Értelemszerűen kitölti azokat, amennyiben szükséges megad további információkat.
  - A kitöltés végeztével a rendszer automatikus kiértékelés után közli a felhasználóval az eredményét.
+ 
+ 
+Képernyőtervek
+
+Forgatókönyvek
+
+Vágyálomrendszer
+
+Fogalomszótár
