@@ -3,13 +3,18 @@ Funkcionális Specifikáció
 
 Áttekintés
 -----------
- - A projektben a célunk az, hogy létrehozzunk egy többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak használni kvízek kitöltésére.
+ - A projektben a célunk az, hogy létrehozzunk egy ingyenes, többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak használni kvízek kitöltésére.
  - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltését nem korlátozhatja semmi.
  - A kérdőíveket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
 
 Jelenlegi helyzet
 ------------------
 
+ Szeretnénk egy olyan alkalmazást fejleszteni, amivel a felhásználók könnyen tudnak kvízeket létrehozni és könnyen kitudják azokat tölteni.Jelenleg ez maximum papíralapon müködik, vagy olyan felületen, ahol sok a korlátolt funkció. Szeretnék továbbá két nagy csoportra bontani a kvízeket hozzáférés szerint
+ - Privát kvízek
+ - Publikus kvízek
+ Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
+ Továbbá, mivel már szinte mindenkinek van okostelefonja, azon internetelérés, így ezt kihasználva, a quizek kitöltése is könnyebben megtörténhet majd.
 
 Követelménylista
 -----------------
@@ -39,14 +44,42 @@ Igényelt üzleti olyamatok modellje
 
 Használati esetek
 ------------------
-- Regisztráció:
- - A felhasználó megadja a bejelentkezési adatait, ezután szükséges megerősíteni az e-mail címét.
- - Bejelentkezés után megadhat néhány további adatot. Ezt a Profil menü alatt teheti meg.
-- Bejelentkezés:
- - A felhasználó megadja a bejelentkezési adatatait.
- - Ha helyes a megadott jelszó és felhasználónév, akkor tovább enged a rendszer.
- - Ellenkező esetben a rendszer kiír a problémának a megfelelő hibaüzenetet.
-- Kvíz kitöltése:
- - A felhasználó megadja a kvíz bejelentkezési kódját.
- - Értelemszerűen kitölti azokat, amennyiben szükséges megad további információkat.
- - A kitöltés végeztével a rendszer automatikus kiértékelés után közli a felhasználóval az eredményét.
+ - Felhasználók
+   - Superuser
+   - Admin
+   - Normál felhasználó
+ - Szerepkörök
+   - Superuser 
+        - Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt
+		- Törölhet felhasználót
+		- Törölheti bármelyik kvízt (akár privátot is)
+   - Admin 
+        - Az jogosultsági köre már szűkebb
+		- kvízeket törölhet 
+		- Létrehozhat kvízt
+		- Saját fiókját törölheti/szerkesztheti
+   - Normál felhasználó 
+        - Csak a regisztrációra és a kvízek kitöltésére és létrehozására jogosult
+		- Létrehozhat kvízt
+		- Saját kvízeit törölheti
+		- Saját fiókját törölheti/szerkesztheti
+ 
+  Megj.: természetesen egy nem bejelentkezett (vendég) felhasználó semmilyen jögkörrel nem szerepelhet az oldalon.
+ 
+Képernyőtervek
+------------------
+
+Forgatókönyvek
+------------------
+
+ - Regisztráció: A felhasználó megadja a bejelentkezési adatait. Bejelentkezés után megadhat néhány további adatot. Ezt a Profil menü alatt teheti meg.
+ - Bejelentkezés: A felhasználó megadja a bejelentkezési adatatait. Ha helyes a megadott jelszó és felhasználónév, akkor tovább enged a rendszer. Ellenkező esetben a rendszer kiír a problémának a megfelelő hibaüzenetet.
+ - Kvíz kitöltése: A felhasználó megadja a kvíz bejelentkezési kódját, vagy választ egyet a publikusak közül. Értelemszerűen kitölti azokat, amennyiben szükséges megad további információkat. A kitöltés végeztével a rendszer automatikus kiértékelés után közli a felhasználóval az eredményét.
+ - Kvíz létrehozása: A felhasználó létrehozhat kvízt, ahol megadhat témakört, kérdéseket, válaszokat, illetve megadhatja, hogy ez publikus vagy privát kvíz legyen-e. Ha publikus lesz, akkor bárki kitöltheti, ha privát, akkor csak a kóddal rendelkező felhasználók.
+ 
+
+Vágyálomrendszer
+------------------
+
+Fogalomszótár
+------------------
