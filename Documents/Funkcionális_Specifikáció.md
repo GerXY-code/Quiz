@@ -3,7 +3,7 @@ Funkcionális Specifikáció
 
 Áttekintés
 -----------
- - A prokektben a célunk az, hogy létrehozzunk egy többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak hasznánli kvízek kitöltésére.
+ - A projektben a célunk az, hogy létrehozzunk egy többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak hasznánli kvízek kitöltésére.
  - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltése nem korlátozhatja semmi.
  - A kérdőívek teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
 
