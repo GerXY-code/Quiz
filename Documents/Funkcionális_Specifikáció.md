@@ -44,14 +44,14 @@ Igényelt üzleti olyamatok modellje
 
 Használati esetek
 ------------------
-Felhasználók
- - Superuser
- - Admin
- - Normál felhasználó
-Szerepkörök
- - Superuser: Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt. Törölhet felhasználót, illetve kvízt.
- - Admin: Az jogosultsági köre már szűkebb, kvízeket még törölhet, de felhasználókat nem. Létrehozhat kvízt.
- - Normál felhasználó: Csak a regisztrációra és a kvízek kitöltésére és létrehozására jogosult. Illetve természetesen saját kvízeit törölheti.
+ - Felhasználók
+   - Superuser
+   - Admin
+   - Normál felhasználó
+ - Szerepkörök
+   - Superuser: Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt. Törölhet felhasználót, illetve kvízt.
+   - Admin: Az jogosultsági köre már szűkebb, kvízeket még törölhet, de felhasználókat nem. Létrehozhat kvízt.
+   - Normál felhasználó: Csak a regisztrációra és a kvízek kitöltésére és létrehozására jogosult. Illetve természetesen saját kvízeit törölheti.
  
   Megj.: természetesen egy nem bejelentkezett (vendég) felhasználó semmilyen jögkörrel nem szerepelhet az oldalon.
  
