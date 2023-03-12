@@ -20,7 +20,7 @@ Követelménylista
 | Modul | ID | Név | version | Kifejtés |
 | :---: | :---: | :---: | :---: | :--- |
 | Jogosultság | KJ1 | Bejelentkezés | 1.0 | A felhasználó belép a megfelelő adatok bevitelével. |
-| Jogosultság | KJ2 | Regisztráció | 1.0 | A felhasználó a nevének, email címének és jelszavának bevitelével regisztrálhatja magát. Továbbá, ezen a felületen megjelölheti, hogy milyen szintű felhasználó szeretne lenni. Ha a valamelyik hiányzik vagy a követelményeknek nem tesz eleget, akkor a rendszer figyelmezteti a felhasználót. |
+| Jogosultság | KJ2 | Regisztráció | 1.0 | A felhasználó a nevének, email címének és jelszavának bevitelével regisztrálhatja magát. |
 | Felület | KF1 | Bejelentkezési felület | 1.0 | A felhasználók itt tudnak bejelentkezni a rendszerbe. |
 | Felület | KF2 | Regisztrációs felület | 1.0 | Felhasználók itt tudnak regisztrálni a rendszerbe. |
 | Felület | KF3 | Kvíz kiválasztás | 1.0 | A felhasználó kiválaszt egy kvízt, amelyre el szeretné küldeni a válaszait. (Vagy be kell írnia egy kódot, amivel be tud csatlakozni, mint quizizzen?) |
@@ -67,6 +67,7 @@ Használati esetek
         - Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt
 		- Törölhet felhasználót
 		- Törölheti bármelyik kvízt (akár privátot is)
+		- Felhasználó jogosultsági szintjét növelheti illetve csökkentheti
    - Admin 
         - Az jogosultsági köre már szűkebb
 		- kvízeket törölhet 
