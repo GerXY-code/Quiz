@@ -11,11 +11,10 @@ Követelmény Specifikáció
 Jelenlegi helyzet
 ------------------
 
- Szeretnénk egy olyan alkalmazást fejleszteni, amivel a felhásználók könnyen tudnak kvízeket létrehozni és könnyen kitudják azokat tölteni.Jelenleg ez maximum papíralapon müködik, vagy olyan felületen, ahol sok a korlátolt funkció. Szeretnék továbbá két nagy csoportra bontani a kvízeket hozzáférés szerint
+ Jelenlegi helyzet alapján, egy csomó iskolában még hagyományosan, papíralapon töltenek ki dolgozatokat, röpdolgozatokat, illetve kártyajátékok formájában különböző kvízeket. Ezzel az alkalmazással kihasználjuk azt, hogy manapság már mindenkinek van okostelefonja, és onnan is könnyedén kitöltheti a kiválasztott kvízeket.
  - Privát kvízek
  - Publikus kvízek
- Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
- Továbbá, mivel már szinte mindenkinek van okostelefonja, azon internetelérés, így ezt kihasználva, a quizek kitöltése is könnyebben megtörténhet majd.
+   - Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
 
 Vágyálomrendszer
 ------------------
@@ -41,6 +40,12 @@ Követelménylista
 | Felület | KF1 | Bejelentkezési felület | 1.0 | A felhasználók itt tudnak bejelentkezni a rendszerbe. |
 | Felület | KF2 | Regisztrációs felület | 1.0 | Felhasználók itt tudnak regisztrálni a rendszerbe. |
 | Felület | KF3 | Kvíz kiválasztás | 1.0 | A felhasználó kiválaszt egy kvízt, amelyre el szeretné küldeni a válaszait. (Vagy be kell írnia egy kódot, amivel be tud csatlakozni, mint quizizzen?) |
-| Felület | KF4 | Kvíz megoldása | 1.0 | A felhasználó elkezdi megoldani az adott kvízt. Minden elindított kvízjáték alatt egy kérdésre csak egyszerválaszolhat. |
+| Felület | KF4 | Kvíz megoldása | 1.0 | A felhasználó elkezdi megoldani az adott kvízt. Minden elindított kvízjáték alatt egy kérdésre csak egyszer válaszolhat. |
 | Felület | KF5 | Kvíz készítése | 1.0 | A felhasználó itt készíthet saját kvízeket. Több kérdést is hozzáadhat, melyeknek különböző típusú válaszlehetőségei lehetnek. Akkor tekintunk egy kvízt késznek, ha minden kérdésre adott a felhasználó megoldást. |
 | Felület | KF6 | Kvíz szerkesztése | 1.0 | Ezen a felületen végezhet a felhasználó módosításokat a meglévő kvízeihez, illetve törölheti azokat. (Le is tölthetné őket?)|
+| Felület | KF7 | Saját profilom | 1.0 | Ezen a felületen végezhet a felhasználó módosításokat a felhasználói fiókjával kapcsolatosan, illetve törölheti is azt |
+| Felület | KF8 | Kvízeim | 1.0 | Ez a fő felülete a kvízek létrehozására, saját kvízek módosítására illetve törlésére (ezek a felületek innen érhetőek el) |
+
+
+Fogalomszótár
+-----------------
