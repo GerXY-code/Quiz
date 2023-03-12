@@ -37,9 +37,24 @@ Jelenlegi üzleti folyamatok modellje
 
 Igényelt üzleti olyamatok modellje
 ------------------------------------
+ - Regisztráció és Bejelentkezés
+   - A felhasználó regisztrál az oldalra, ha még nincs fiókja
+   - Megadott mezőket kitölti, (e-mail cím, felh.név és jelszó, illetve szükség esetén avatar képet is tud feltölteni)
+   - Sikeres regisztrációt követően már bejelentkezhet az oldalra
+ - Főoldal
+   - A főoldalon tud számos publikus kvíz közül választani kategóriákra lebontva
+   - A privát kvízek indítására a navigációs sávban lesz lehetőség, itt kód megadásával tud majd csatlakozni
+   - A főoldalon lévő navigációs sáv tartalmazza majd a "Saját profilom", a "Kvízeim", a "Privát kvízhez csatalakozás" és a "Kijelentkezés" menüpontokat
+     - Saját profilom
+	   - A felhasználó itt tudja módosítani a fiókját mint pl: Avatar kép, felh.név, jelszó, illetve tudja törölni is azt
+	 - Kvízeim 
+	   - A felhasználó ezen menüponton belül tudja megtekinteni az általa kitöltött illetve létrehozott kvízeket
+	   - Továbba itt tud létrehozni új kvízt, vagy egy meglévőt törölni, illetve módosítani
  - Kvízek létrehozása és azok központi tárolása.
- - Minden kitöltött kvíz eredményének, illetve felhasználó válaszainak tárolása.
- - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
+     - A felhasználó kiválasztja a kvíz kategóriáját, megírja a kérdéseket, megírja hozzá a válaszokat és elmenti
+	 - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
+ - Tárolása
+     - Minden kitöltött kvíz eredményének, illetve felhasználó válaszainak tárolása.
 
 
 Használati esetek
