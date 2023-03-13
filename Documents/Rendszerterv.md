@@ -106,6 +106,13 @@ Fizikai környezet
    - Back-end: PHP (Laravel keretrendszerrel)
    - Adatbázis: SQL, PL/SQL
  - Leíró nyelvek: HTML5 BOOTSTRAP-el, egyéni CSS3-al
+ - Fejlesztői eszközök
+   - Visual Studio Code
+   - XAMPP (Apache és MySQL service)
+   - MySQL workbench
+   - Figma
+ - Verziókezelést segítő eszközök
+   - Github Desktop
  - Az alkalmazás jellege
    - Webes felület
    - Okostelefonokon/tableteken is egyaránt jól használható a reszponzivitás miatt
