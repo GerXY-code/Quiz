@@ -12,14 +12,14 @@ Projekt terv
 
 - ### 2. Projektmunkások és felelőségek ###
     - ### Front-end munkálatok: ### 
-        - Résztvevői: Lehoczky Gergő Péter
-        - Feladatuk a weblap felhasználói felületének létrehozása és reszponsív elemek megvalósítása.
-        
-	- ### back-end munkálatok: ### 
         - Résztvevői: Huszka Dániel
-        - Feladatuk a weblap funkcionalitásának biztosítása, kommunikáció az adatbázissal, inputok fogadása és feldolgozása a front-end-ről.
+        - Feladatuk a weblap felhasználói felületének létrehozása és reszponzív elemek megvalósítása.
+        
+	- ### Back-end munkálatok: ### 
+        - Résztvevői: Lehoczki Gergő Péter
+        - Feladatuk a weblap funkcionalitásának biztosítása, kommunikáció az adatbázissal, inputok fogadása és feldolgozása a felhasználói felületről.
 
-	- ### Database munkálatok: ### 
+	- ### Adatbázis munkálatok: ### 
         - Résztvevői: Juhász Domonkos
         - Feladatuk a weblap számára biztosítani egy átgondolt és rendezett adatbázist az adatok biztonságos tárolásának garantálása mellett.
 
@@ -54,6 +54,21 @@ Funkcionális terv
 
 Fizikai környezet
 -----------------
+
+ - Adatbázis: Oracle-MySQL
+ - Programozási nyelvek
+   - Front-end: Javascript (React-al)
+   - Back-end: PHP (Laravel keretrendszerrel)
+   - Adatbázis: SQL, PL/SQL
+ - Leíró nyelvek: HTML5 BOOTSTRAP-el, egyéni CSS3-al
+ - Az alkalmazás jellege
+   - Webes felület
+   - Okostelefonokon/tableteken is egyaránt jól használható a reszponzivitás miatt
+ - Szükséges rendszerkövetelmények
+   - Megfelelő internetkapcsolat
+   - Mozilla Firefox, Google Chrome, Safari, Edge, (IE nem támogatott)
+ 
+   
 
 Absztrakt domain modell
 -----------------------
