@@ -15,7 +15,9 @@ Követelmények
 
 Funkcionális terv
 -----------------
+
 Fizikai környezet
+-----------------
 
 Absztrakt domain modell
 -----------------------
