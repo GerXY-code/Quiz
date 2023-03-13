@@ -53,6 +53,49 @@ Követelmények
 
 Funkcionális terv
 -----------------
+- Rendszerszereplők
+  - Superuser
+  - Admin
+  - Sima felh.
+  
+- Rendszerhasználati esetek és lefutásaik
+  - Superuser
+    - Eleve regisztrált felhasználó, aki minden jogosultsággal rendelkezik
+	- Belőle csak egy lehet
+	- Kitölthet, létrehozhat, módosíthat és törölhet kvízeket (bármelyik kvízt)
+	- Látja a privát kvízeket is
+	- Növelheti illetve csökkentheti a jogosultsági szintjét a felhasználóknak
+	- Bármelyik felhasználót törölheti
+  - Admin
+    - Regisztráció után és a superuser közreműködésével válhat egy sima felhasználóból admin
+	- Törölhet publikus kvízt, vagy saját privátot vagy módosíthatja azt
+    - Saját profilját módosíthatja/törölheti
+  - Sima felh.
+    - Regisztrálhat
+	- Készíthet saját, privát vagy publikus kvízt melyet módosíthat is akár
+	- Saját profilját módosíthatja/törölheti
+- Menü hierarchiák
+    - Bejelentkező/Regisztrációs oldal
+	  - Sikeres bejelentkezés vagy regisztrálás után a főoldalra irányít minket át az oldal
+	- Főoldal
+	  - Ezt az oldalt csak a bejelentkezett felhasználók láthatják
+	  - A navigációs sávban láthatunk további menüpontokat
+	  - Az oldal közepén láthatunk publikus kvízeket, melyeket kiválaszthatunk kitöltésre kategóriák szerint
+	- Navigációs sáv
+	  - Elemei 
+	    - Saját profilom
+		- Kvízeim
+		- Privát kvízhez csatlakozás
+		- Kijelentkezés
+	  - Saját profilom
+	    - Itt tudja szerkeszteni profilját a felhasználó, vagy akár törölni
+	  - Kvízeim
+	    - Itt tud új kvízt létrehozni, vagy akár a meglévő vagy kitöltött kvízek között keresgélni, módosítani azokat (ha saját)
+	  - Privát kvízhez csatlakozás
+	    - A privát kvízhez való csatlakozás kód ellenében történik
+	  - Kijelentkezés
+	    - A felhasználó kijelentkezését biztosítja
+
 
 Fizikai környezet
 -----------------
