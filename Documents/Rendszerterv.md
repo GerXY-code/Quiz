@@ -42,6 +42,8 @@ Követelmények
     - Mobil kompatibilitás
 - Regisztráció / Bejelentkezés
     - A felhasználó tudjon bejelentkezni, valamint regisztrálni, ha nincsen még fiókja. Felhasználó névvel / email segítségével, valamint egy tetszőlegesen megadott jelszóval.
+	- "Remember me" funkció a bejelentkezéshez
+	- "Elfelejtett jelszó" lehetőség, mely során emailben kap további utasításokat
 - Kvízek 
     - Kvízek létrehozása tetszőleges témakörben. 
     - A megoldott kvízek eredményeit minden felhasználónak külön egy adatbázisban tárolni, melyből könnyen lehet csoportosítani.
