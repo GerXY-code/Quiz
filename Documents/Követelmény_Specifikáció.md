@@ -30,13 +30,15 @@ A diák felhasználók a tanárokkal együtt pedig tudják majd "végigjátszani
 Jelenlegi üzleti folyamatok modellje
 -------------------------------------
 
+
+
 Igényelt üzleti olyamatok modellje
 ------------------------------------
 
-
-
-
-
+1. Online megjelenés.
+2. Felhasználók válaszainak adatbázisba történő elmentése.
+3. Egy kvíz, egy ember által, többszöri kitöltésre lesz alkalmas.
+4. Egy "dobogó" felállítása minden ember számára, hogy melyik kvízt, milyen eredménnyel tudott kitölteni.
 
 
 Követelménylista
