@@ -143,17 +143,31 @@ Az adatbázis adattáblái:
 **Users Tábla** (A felhasználók adatait leíró tábla)<br>
 | Mező              	| Típus  	|        Leírás                	     |
 |-------------------	|----------	|-----------------------------	   |
-| id          	      | int     	| azonosító, elsődleges kulcs      |
+| id          	      | bigint     	| azonosító, elsődleges kulcs      |
 | name               	| varchar  	| felhasználó neve                 |
-| age               	| tinyint  	| felhasználó kora                 |
 | role_id          	  | int      	| szerepkör                        |
-| username          	| varchar  	| felhasználónév              	   |
 | email             	| varchar  	| email címet tartalmaző mező      |
 | email_verified_at       	| timestamp  	| mikor hitelesítette az email címét      |
 | password          	| varchar  	| jelszót tartalmazó mező     	   |
 | remember_token          	| varchar  	| automatikus bejelentkezést segítő kulcs     	   |
 | created_at 	| timestamp 	| regisztráció dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma leírása              |
+
+**Personal_access_tokens** (Token tábla)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| bigint     | azonosító, elsődleges kulcs             |
+| tokenable_type            | varchar | token típusa                     |
+| tokenable_id            | bigint | token egyedi azonosítója                         |
+| name            | varchar | token neve                          |
+| token            | varchar | maga a token, személyesen                          |
+| abilities            | text | leírja milyen szerepet lát el az adott token                          |
+| last_used_at            | timestamp | az utolsó használatának az ideje                          |
+| expires_at            | timestamp | a lejáratának az ideje                          |
+| last_used_at            | timestamp | az utolsó használatának az ideje                          |
+| created_at            | timestamp | a keletkezésének az ideje                          |
+| updated_at            | timestamp | az utolsó frissítésének az ideje                          |
+
 
 Implementációs terv
 -------------------
