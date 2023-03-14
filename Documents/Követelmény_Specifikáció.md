@@ -30,6 +30,7 @@ A diák felhasználók a tanárokkal együtt pedig tudják majd "végigjátszani
 Jelenlegi üzleti folyamatok modellje
 -------------------------------------
 
+A kvízek lényege, hogy egyes emberek vagy saját maguk tudását le tudják ellenőrizni, vagy pedig másokkal szemben eldöntsék, hogy kinek nagyobb a tudása egyes témakörökben.
 
 
 Igényelt üzleti olyamatok modellje
