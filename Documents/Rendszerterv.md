@@ -136,6 +136,25 @@ Adatbáziskezelésre MySQL-t használunk. A megjelenítésért a Bootstrap felel
 Adatbázis terv
 --------------
 
+A szükséges adatokat MySQL adatbázisban tároljuk, itt lesznek a felhasználó és kvíz adatai, továbbá a teszteléshez szükséges adatok is.
+
+Az adatbázis adattáblái:
+
+**Users Tábla** (A felhasználók adatait leíró tábla)<br>
+| Mező              	| Típus  	|        Leírás                	     |
+|-------------------	|----------	|-----------------------------	   |
+| id          	      | int     	| azonosító, elsődleges kulcs      |
+| name               	| varchar  	| felhasználó neve                 |
+| age               	| tinyint  	| felhasználó kora                 |
+| role_id          	  | int      	| szerepkör                        |
+| username          	| varchar  	| felhasználónév              	   |
+| email             	| varchar  	| email címet tartalmaző mező      |
+| email_verified_at       	| timestamp  	| mikor hitelesítette az email címét      |
+| password          	| varchar  	| jelszót tartalmazó mező     	   |
+| remember_token          	| varchar  	| automatikus bejelentkezést segítő kulcs     	   |
+| created_at 	| timestamp 	| regisztráció dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma leírása              |
+
 Implementációs terv
 -------------------
 
