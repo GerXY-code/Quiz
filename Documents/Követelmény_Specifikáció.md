@@ -39,7 +39,7 @@ Igényelt üzleti olyamatok modellje
 1. Online megjelenés.
 2. Felhasználók válaszainak adatbázisba történő elmentése.
 3. Egy kvíz, egy ember által, többszöri kitöltésre lesz alkalmas.
-4. Egy "dobogó" felállítása minden ember számára, hogy melyik kvízt, milyen eredménnyel tudott kitölteni.
+4. Egy leaderboard felállítása minden ember számára, hogy melyik kvízt, milyen eredménnyel tudott kitölteni.
 
 
 Követelménylista
@@ -60,3 +60,5 @@ Követelménylista
 
 Fogalomszótár
 -----------------
+
+leaderboard - egyfajta dobogó, mely megmutat, csökkenő sorrendben egyes adatokat
