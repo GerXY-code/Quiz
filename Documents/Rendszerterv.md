@@ -175,6 +175,13 @@ Az adatbázis adattáblái:
 | token            | varchar | maga a token                          |
 | created_at            | timestamp | létrehozásának az ideje                          |
 
+**Migrations** (Migrációk táblája)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| migration            | varchar | migration file neve                          |
+| batch            | int | ami nem futott le migration                          |
+
 
 Implementációs terv
 -------------------
