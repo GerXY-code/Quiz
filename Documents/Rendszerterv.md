@@ -168,6 +168,13 @@ Az adatbázis adattáblái:
 | created_at            | timestamp | a keletkezésének az ideje                          |
 | updated_at            | timestamp | az utolsó frissítésének az ideje                          |
 
+**Password_reset_tokens** (jeszó visszaállító tokenek táblája)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| email            	| varchar     | azonosító, elsődleges kulcs             |
+| token            | varchar | maga a token                          |
+| created_at            | timestamp | létrehozásának az ideje                          |
+
 
 Implementációs terv
 -------------------
