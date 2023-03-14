@@ -1,4 +1,4 @@
-Rendszerterv
+﻿Rendszerterv
 ==========================
 
 Rendszer célja
@@ -127,6 +127,11 @@ Absztrakt domain modell
 
 Architekturális
 ---------------
+A Back-end PHP nyelven íródik, Laravel keretrendszerben.
+Rendszerünkhöz az MVC (Model View Controller) szoftvertervezési mintát alkalmazzuk.
+A Front-end Javascript nyelven íródik, React keretrendszerben
+
+Adatbáziskezelésre MySQL-t használunk. A megjelenítésért a Bootstrap felel.
 
 Adatbázis terv
 --------------
