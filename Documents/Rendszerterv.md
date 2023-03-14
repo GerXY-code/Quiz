@@ -182,6 +182,17 @@ Az adatbázis adattáblái:
 | migration            | varchar | migration file neve                          |
 | batch            | int | ami nem futott le migration                          |
 
+**Failed_jobs** (Sikertelen műveletek)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| bigint     | azonosító, elsődleges kulcs             |
+| UUid            | varchar | az adatbázis azonosítója                          |
+| connection            | text | conntection string                          |
+| queue            | text | várakozási idő                          |
+| payload            | longtext | maga a tartalom                          |
+| exception            | longtext | kivétel                          |
+| failed_at            | timestamp | sikertelenség ideje                          |
+
 
 Implementációs terv
 -------------------
