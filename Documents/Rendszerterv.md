@@ -197,6 +197,10 @@ Az adatbázis adattáblái:
 Implementációs terv
 -------------------
 
+- A webes alkalmazások előnyeit kihasználva nincs szükség kompatibilitásra, hiszen a php szerver oldalon fut.
+- A megjelenítéshez használt technológiák minimális követelményekkel rendelkeznek, egyedül az Interner Explorernél léphetnek fel komplikációk, de mivel hivatalosan nem támogatott böngésző, ezért nem készül rá implementáció, nem kerül bele a tesztbe se. 
+
+
 Tesztterv
 ---------
 
