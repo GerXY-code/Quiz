@@ -98,5 +98,11 @@ Forgatókönyvek
 Vágyálomrendszer
 ------------------
 
+A projekt célja egy webes kvízjáték rendszer, ahol az elérhető funkciók felhasználói kategóriánként eltérőek, például egy normál felhaszmáló számára más funkciók elérhetőek mint egy superuser számára, ezért a funkciók csak sikeres regisztráció és bejelentkezés után használhatóak.
+
+A norrmál felhasználókon felül kell magasabb rendű felhasználó, egy superuser, aki teljes hozzáféréssel rendelkezik a rendszerben. Az esetleges hibákat neki jelzik a felhasználók. A superuser korlátlanul módosíthatja, törölheti bármelyik kvízt, valamint a felhasználók adatait is módosíthatja vagy adhat hozzá új felhasználót. A normál felhasználó kitöltheti a kvízeke, de nem módosíthatja mindet önkényesen, csak a sajátjait.
+
+A kvíz létrehozása során, minden felhasználóó készíthet komplexebb vagy szimplább kvízeket, függően attól, hogy milyen céllal, milyen témával fog rendelkezni.
+
 Fogalomszótár
 ------------------
