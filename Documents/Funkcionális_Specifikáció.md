@@ -48,9 +48,14 @@ Igényelt üzleti olyamatok modellje
    - A főoldalon lévő navigációs sáv tartalmazza majd a "Saját profilom", a "Kvízeim", a "Privát kvízhez csatalakozás" és a "Kijelentkezés" menüpontokat
      - Saját profilom
 	   - A felhasználó itt tudja módosítani a fiókját mint pl: Avatar kép, felh.név, jelszó, illetve tudja törölni is azt
-	 - Kvízeim 
+	- Kvízeim 
 	   - A felhasználó ezen menüponton belül tudja megtekinteni az általa kitöltött illetve létrehozott kvízeket
 	   - Továbba itt tud létrehozni új kvízt, vagy egy meglévőt törölni, illetve módosítani
+	- Privát kvízhez csatalakozás
+	   - A felhasználó ezen a metüponton belül tudja majd megadni a privt kvízhez szükséges csatlakozásó kódot.
+	   - A kód megadása után a kvíz készítő elindítása után fog elkezdődni a kitöltés.
+	- Kijelentkezés
+	   - A gomb megynomása után egy felugró ablakon megkérdezzük a felhasználót, hogy biztosan ki szeretne-e lépni és amennyiben igen, akkor fog elkezdődni a kifejeletkezése eljárás.
  - Kvízek létrehozása és azok központi tárolása.
      - A felhasználó kiválasztja a kvíz kategóriáját, megírja a kérdéseket, megírja hozzá a válaszokat és elmenti
 	 - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
