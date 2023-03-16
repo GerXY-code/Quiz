@@ -64,14 +64,15 @@ Használati esetek
    - Superuser
    - Admin
    - Normál felhasználó
+
  - Szerepkörök
    - Superuser 
         - Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt
 		- Törölhet felhasználót
 		- Törölheti bármelyik kvízt (akár privátot is)
-		- Felhasználó jogosultsági szintjét növelheti illetve csökkentheti
+		- Felhasználó jogosultsági szintjét növelheti, illetve csökkentheti
    - Admin 
-        - Az jogosultsági köre már szűkebb
+        - Az jogosultsági köre már bővebb
 		- kvízeket törölhet 
 		- Létrehozhat kvízt
 		- Saját fiókját törölheti/szerkesztheti
