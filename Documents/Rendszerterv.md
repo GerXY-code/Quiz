@@ -125,7 +125,7 @@ Fizikai környezet
 Absztrakt domain modell
 -----------------------
 
-Architekturális
+Architekturális terv
 ---------------
 A Back-end PHP nyelven íródik, Laravel keretrendszerben.
 Rendszerünkhöz az MVC (Model View Controller) szoftvertervezési mintát alkalmazzuk.
