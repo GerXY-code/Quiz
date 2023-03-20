@@ -175,12 +175,33 @@ Az adatbázis adattáblái:
 | token            | varchar | maga a token                          |
 | created_at            | timestamp | létrehozásának az ideje                          |
 
+**Migrations** (Migrációk táblája)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| migration            | varchar | migration file neve                          |
+| batch            | int | ami nem futott le migration                          |
+
+**Failed_jobs** (Sikertelen műveletek)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| bigint     | azonosító, elsődleges kulcs             |
+| UUid            | varchar | az adatbázis azonosítója                          |
+| connection            | text | conntection string                          |
+| queue            | text | várakozási idő                          |
+| payload            | longtext | maga a tartalom                          |
+| exception            | longtext | kivétel                          |
+| failed_at            | timestamp | sikertelenség ideje                          |
+
 
 Implementációs terv
 -------------------
+- A webes alkalmazások előnyeit kihasználva nincs szükség kompatibilitásra, hiszen a php szerver oldalon fut.
+- A megjelenítéshez használt technológiák minimális követelményekkel rendelkeznek, egyedül az Interner Explorernél léphetnek fel komplikációk, de mivel hivatalosan nem támogatott böngésző, ezért nem készül rá implementáció, nem kerül bele a tesztbe se. 
 
 Tesztterv
 ---------
+- Az tesztelés a fejlesztéssel párhuzamosan, funkciók elkészítését követően, a program építése közben történik mind ameddig, amíg el nem jutunk egy szinte kész állapotba. 
 
 Telepítési terv
 ---------------
