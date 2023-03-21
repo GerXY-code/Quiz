@@ -147,6 +147,8 @@ Fizikai környezet
 
 Absztrakt domain modell
 -----------------------
+![kep](https://user-images.githubusercontent.com/114657677/226692165-51633402-bcca-4244-aa5d-235ac22eff7e.jpg)
+
 
 Architekturális terv
 ---------------
