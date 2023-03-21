@@ -140,7 +140,7 @@ A szükséges adatokat MySQL adatbázisban tároljuk, itt lesznek a felhasznál�
 
 Az adatbázis adattáblái:
 
-**Users Tábla** (A felhasználók adatait leíró tábla)<br>
+**users Tábla** (A felhasználók adatait leíró tábla)<br>
 | Mező              	| Típus  	|        Leírás                	     |
 |-------------------	|----------	|-----------------------------	   |
 | id          	      | bigint     	| azonosító, elsődleges kulcs      |
@@ -153,7 +153,7 @@ Az adatbázis adattáblái:
 | created_at 	| timestamp 	| regisztráció dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma leírása              |
 
-**Personal_access_tokens** (Token tábla)<br>
+**personal_access_tokens** (Token tábla)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| bigint     | azonosító, elsődleges kulcs             |
@@ -168,21 +168,21 @@ Az adatbázis adattáblái:
 | created_at            | timestamp | a keletkezésének az ideje                          |
 | updated_at            | timestamp | az utolsó frissítésének az ideje                          |
 
-**Password_reset_tokens** (jeszó visszaállító tokenek táblája)<br>
+**password_reset_tokens** (jeszó visszaállító tokenek táblája)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | email            	| varchar     | azonosító, elsődleges kulcs             |
 | token            | varchar | maga a token                          |
 | created_at            | timestamp | létrehozásának az ideje                          |
 
-**Migrations** (Migrációk táblája)<br>
+**migrations** (Migrációk táblája)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | migration            | varchar | migration file neve                          |
 | batch            | int | ami nem futott le migration                          |
 
-**Failed_jobs** (Sikertelen műveletek)<br>
+**failed_jobs** (Sikertelen műveletek)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| bigint     | azonosító, elsődleges kulcs             |
@@ -192,6 +192,57 @@ Az adatbázis adattáblái:
 | payload            | longtext | maga a tartalom                          |
 | exception            | longtext | kivétel                          |
 | failed_at            | timestamp | sikertelenség ideje                          |
+
+**quizess** (A kvízek ebben a táblában kerülnek eltárolásra)
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| title            	| varchar     |   a kvíz címe           |
+| category            	| varchar     |   a kvíz kategóriája           |
+| is_private            	| boolean     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
+
+**quiz_users** (Kapcsolótábla, a quizess és a users táblát kapcsolja össze)
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| quiz_id            	| int     |   a kvízek táblából a kvíz azonosítója kerül bele   |
+| user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
+
+
+
+
+**questions** (A kvízekhez tartozó kérdések azonosítók alapján)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| question            	| varchar     |   egy adott kvízhez tartozó kérdés           |
+
+
+**quiz_questions** (A quizess és a questions táblák kapcsolótáblája)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| quiz_id           | int     | a quizess tábla azonosítója kerül bele  |
+| question_id       | int     | a kérdés azonosítója kerül bele         |
+
+
+**answers** (A kvízekhre adott válaszok ide kerülnek be)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| answer            	| varchar     |   egy adott kvízhez tartozó válasz     |
+
+**quiz_question_answers** (Egy kvíz kitöltésekor töltődik fel)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| quiz_id           | int     | a quizess tábla azonosítója kerül bele  |
+| question_id       | int     | a kérdés azonosítója kerül bele         |
+| answer_id         | int     | a kérdés azonosítója kerül bele         |
+| user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
+
+
+
 
 
 Implementációs terv
