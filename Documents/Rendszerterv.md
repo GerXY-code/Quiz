@@ -40,6 +40,24 @@ Projekt terv
 Üzleti folyamatok modellje
 --------------------------
 
+- Üzleti szereplők:
+  - Felhasználók: Felhasználóvá a felületen történő regisztrációval válhat a látogató. A regisztráció során szerzett jogosultság határozza meg, hogy a felhasználó milyen funkciókhoz férhozzá a felületen. A felhasználóknak 3 csoportját különböztetjük meg:
+    - Sima felhasználó: Ő kitölthet bármilyen kvízt, amit a nyílvános könyvtárből elér, illetve, kód bevitele után, privát kvízeket is kötölthet. Továbbá adatlapuk megtekintésére és szerkesztésére is lehetőségük van.
+    - Admin: Regisztráció után egy superuser tehet egy profilt adminná. Feladata a kvízek moderálása, ezáltal törölhet vagy szerkezthet bármilyen kvízt.
+    - Superuser: Ez a rang rendenlekezik minden hozzáférhető eszközzel. Belőle csak egy lehet. Törölhet vagy szerkeszthet bármiyen kvízt és profilt.
+
+- Üzleti folyamatok: 
+  - Felhasználó regisztrációja: A felhasználó egy regisztrációs form kitöltésével tud regisztrálni. A sikeres regisztrációhoz az alábbi adatok megadása szükséges.    
+    - Felhasználónév: Egyedinek kell lennie.
+    - Jelszó: Legalább 6 karakter hosszúságúnak kell lennie.
+    - Jelszó megerősítése: A megadott jelszóval megegyezőnek kell lennie.
+
+	A jelszavak titkosítás után kerülnek eltárolásra az adatbázisban
+
+  - Felhasználó azonosítása: A felhasználó a bejelentkezés során a megfelelő mezőkbe megadja felhasználónevét és jelszavát, majd a rendszer ellenőrzi, hogy a felhasználó szerepel-e az adatbázisban. Amennyiben szerepel, a rendszer ellenrőzi a felhasználótól érkezett jelszó egyezik-e az adatbázisban tárolta. Ha az azonosítás sikeres, a felhasználó a nyitó oldalára kerül. Amennyiben az azonosítás sikertelen, a rendszer értesíti, hogy miért volt sikertelen a bejelentkezés.
+  - Jelszó visszaállítása: A rendszer egy ilyen kérés után a felhasználó e-mail címén értesíti a kérésről. Ebben az email-ben egy átirányító link fog szerepelni, ami vissza viszi a felhasználót az eredeti weboldalra, ahol egy 2 mezős from-ban meg tudja adni az új jelszavát.
+  - Kvízek eredménye: A kvízek megírása után egy értékelés látható a tesztek végeredményével.
+
 Követelmények
 -------------
 - Dizájn
