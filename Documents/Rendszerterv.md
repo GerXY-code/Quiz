@@ -3,6 +3,11 @@
 
 Rendszer célja
 --------------
+A rendszer célja létrehozni egy olyan weboldalt, amiben kvízeket lehet létrehozni, illetve kitölteni. Minden kvíznek lesznek majd kérdései, minden kérdésnek válaszlehetőségei és minden kérdésnek egy megválaszolási ideje. A kérdésekre minden felhasználónak az adott válaszát adatbázisba mentjük.
+
+Egy felhasználó majd ugyanúgy tud kvízeket létrehozni, mint kitölteni, illetve egy létrehozott kvíznél be lehet állítani hogy privát legyen, melyhez ezután csak az akkor kapott kóddal tudnak felhasználók kitölteni menni.
+
+Minden kvízt szabadon választható témakörű, ezen részből a kvízkészítés az oldalon teljesen szabadon történik, mindenki azt ad meg, amit csak szeretne úgy kérdéseknek, mint válaszlehetőségeknek.
 
 Projekt terv
 ------------
