@@ -267,6 +267,9 @@ Az adatbázis adattáblái:
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
 
 
+Képernyőkép: 
+![adatbázis terv](https://user-images.githubusercontent.com/114657677/226694409-d9ea720b-d3c9-4c45-97bf-1d289ac59006.png)
+
 
 
 
