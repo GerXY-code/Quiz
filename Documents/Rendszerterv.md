@@ -205,3 +205,21 @@ Tesztterv
 
 Telepítési terv
 ---------------
+ 1. Egy webszerver telepítése, ami futtatni tud PHP szkripteket, Laravel 9.x keretrendszert és támogatja a MySQL-t.
+ 2. Egy modern webböngészőt futtatni képes operációs rendszer
+például:
+ - Windows
+ - Linux
+ - MacOS
+ - Android
+ - iOS
+ 3. Egy modern webböngésző ami futtatni képes az alkalmazást
+például:
+ - Mozilla Firefox
+ - Google Chrome
+ - Microsoft Edge
+ - Opera
+ - Tor
+ 4. Tárhely amely képes eltárolni az adatokat és támogatja a PHP szkripteket és a MySQL-t.
+ 5. Egy program, amellyel feltölthetők az alkalmazás fájljai.
+ 6. Forráskód és adatok importálása
