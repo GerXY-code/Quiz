@@ -5,7 +5,7 @@ Funkcionális Specifikáció
 -----------
  - A projektben a célunk az, hogy létrehozzunk egy ingyenes, többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak használni kvízek kitöltésére.
  - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltését nem korlátozhatja semmi.
- - A kérdőíveket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
+ - A kvízeket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
 
 Jelenlegi helyzet
 ------------------
@@ -17,7 +17,7 @@ Jelenlegi helyzet
 
 Követelménylista
 -----------------
-| Modul | ID | Név | version | Kifejtés |
+| Modul | ID | Név | Verzió | Kifejtés |
 | :---: | :---: | :---: | :---: | :--- |
 | Jogosultság | KJ1 | Bejelentkezés | 1.0 | A felhasználó belép a megfelelő adatok bevitelével. |
 | Jogosultság | KJ2 | Regisztráció | 1.0 | A felhasználó a nevének, email címének és jelszavának bevitelével regisztrálhatja magát. |
@@ -55,7 +55,7 @@ Igényelt üzleti olyamatok modellje
 	   - A felhasználó ezen a metüponton belül tudja majd megadni a privt kvízhez szükséges csatlakozásó kódot.
 	   - A kód megadása után a kvíz készítő elindítása után fog elkezdődni a kitöltés.
 	- Kijelentkezés
-	   - A gomb megynomása után egy felugró ablakon megkérdezzük a felhasználót, hogy biztosan ki szeretne-e lépni és amennyiben igen, akkor fog elkezdődni a kifejeletkezése eljárás.
+	   - A gomb megynomása után egy felugró ablakon megkérdezzük a felhasználót, hogy biztosan ki szeretne-e lépni és amennyiben igen, akkor fog elkezdődni a kijeletkezési eljárás.
  - Kvízek létrehozása és azok központi tárolása.
      - A felhasználó kiválasztja a kvíz kategóriáját, megírja a kérdéseket, megírja hozzá a válaszokat és elmenti
 	 - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
@@ -104,11 +104,11 @@ Forgatókönyvek
 Vágyálomrendszer
 ------------------
 
-A projekt célja egy webes kvízjáték rendszer, ahol az elérhető funkciók felhasználói kategóriánként eltérőek, például egy normál felhaszmáló számára más funkciók elérhetőek mint egy superuser számára, ezért a funkciók csak sikeres regisztráció és bejelentkezés után használhatóak.
+A projekt célja egy webes kvízjáték rendszer, ahol az elérhető funkciók felhasználói kategóriánként eltérőek, például egy normál felhasználó számára más funkciók elérhetőek mint egy superuser számára, ezért a funkciók csak sikeres regisztráció és bejelentkezés után használhatóak.
 
-A norrmál felhasználókon felül kell magasabb rendű felhasználó, egy superuser, aki teljes hozzáféréssel rendelkezik a rendszerben. Az esetleges hibákat neki jelzik a felhasználók. A superuser korlátlanul módosíthatja, törölheti bármelyik kvízt, valamint a felhasználók adatait is módosíthatja vagy adhat hozzá új felhasználót. A normál felhasználó kitöltheti a kvízeke, de nem módosíthatja mindet önkényesen, csak a sajátjait.
+A normál felhasználókon felül kell magasabb rendű felhasználó, egy superuser, aki teljes hozzáféréssel rendelkezik a rendszerben. Az esetleges hibákat neki jelzik a felhasználók. A superuser korlátlanul módosíthatja, törölheti bármelyik kvízt, valamint a felhasználók adatait is módosíthatja vagy adhat hozzá új felhasználót. A normál felhasználó kitöltheti a kvízeket, de nem módosíthatja mindet önkényesen, csak a sajátjait.
 
-A kvíz létrehozása során, minden felhasználóó készíthet komplexebb vagy szimplább kvízeket, függően attól, hogy milyen céllal, milyen témával fog rendelkezni.
+A kvíz létrehozása során, minden felhasználó készíthet komplexebb vagy szimplább kvízeket, függően attól, hogy milyen céllal, milyen témával fog rendelkezni.
 
 Fogalomszótár
 ------------------
