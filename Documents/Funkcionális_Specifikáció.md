@@ -10,7 +10,7 @@ Funkcionális Specifikáció
 Jelenlegi helyzet
 ------------------
 
- Jelenlegi helyzet alapján, egy csomó iskolában még hagyományosan, papíralapon töltenek ki dolgozatokat, röpdolgozatokat, illetve kártyajátékok formájában különböző kvízeket. Ezzel az alkalmazással kihasználjuk azt, hogy manapság már mindenkinek van okostelefonja, és onnan is könnyedén kitöltheti a kiválasztott kvízeket.
+ Jelenlegi helyzet alapján, nagyon sok iskolában még hagyományosan, papíralapon töltenek ki dolgozatokat, röpdolgozatokat, illetve kártyajátékok formájában különböző kvízeket. Ezzel az alkalmazással kihasználjuk azt, hogy manapság már mindenkinek van okostelefonja, és onnan is könnyedén kitöltheti a kiválasztott kvízeket.
  - Publikus kvízek
  - Privát kvízek
    - Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
@@ -112,3 +112,5 @@ A kvíz létrehozása során, minden felhasználó készíthet komplexebb vagy s
 
 Fogalomszótár
 ------------------
+
+Komplex kvíz - Egy olyan kvíz, amelyben egy bonyolultabb témában vannak kérdések és ennek függvényében válaszok.
