@@ -5,19 +5,19 @@ Funkcionális Specifikáció
 -----------
  - A projektben a célunk az, hogy létrehozzunk egy ingyenes, többcélú webes felületet, melyet tanárok, diákok, magánemberek vagy akár cégek is tudnak használni kvízek kitöltésére.
  - A kvízek célja kizárólag oktatást, illetve szórakozást szolgálhat csak, illetve ezek kitöltését nem korlátozhatja semmi.
- - A kérdőíveket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
+ - A kvízeket teljes mértékben adatbázisban szeretnénk tárolni, hogy bárhonnan bárki, a megfelelő hozzáférési adatokkal, hozzáférhessen különböző eszközökről.
 
 Jelenlegi helyzet
 ------------------
 
- Jelenlegi helyzet alapján, egy csomó iskolában még hagyományosan, papíralapon töltenek ki dolgozatokat, röpdolgozatokat, illetve kártyajátékok formájában különböző kvízeket. Ezzel az alkalmazással kihasználjuk azt, hogy manapság már mindenkinek van okostelefonja, és onnan is könnyedén kitöltheti a kiválasztott kvízeket.
- - Privát kvízek
+ Jelenlegi helyzet alapján, nagyon sok iskolában még hagyományosan, papíralapon töltenek ki dolgozatokat, röpdolgozatokat, illetve kártyajátékok formájában különböző kvízeket. Ezzel az alkalmazással kihasználjuk azt, hogy manapság már mindenkinek van okostelefonja, és onnan is könnyedén kitöltheti a kiválasztott kvízeket.
  - Publikus kvízek
+ - Privát kvízek
    - Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
 
 Követelménylista
 -----------------
-| Modul | ID | Név | version | Kifejtés |
+| Modul | ID | Név | Verzió | Kifejtés |
 | :---: | :---: | :---: | :---: | :--- |
 | Jogosultság | KJ1 | Bejelentkezés | 1.0 | A felhasználó belép a megfelelő adatok bevitelével. |
 | Jogosultság | KJ2 | Regisztráció | 1.0 | A felhasználó a nevének, email címének és jelszavának bevitelével regisztrálhatja magát. |
@@ -48,9 +48,14 @@ Igényelt üzleti olyamatok modellje
    - A főoldalon lévő navigációs sáv tartalmazza majd a "Saját profilom", a "Kvízeim", a "Privát kvízhez csatalakozás" és a "Kijelentkezés" menüpontokat
      - Saját profilom
 	   - A felhasználó itt tudja módosítani a fiókját mint pl: Avatar kép, felh.név, jelszó, illetve tudja törölni is azt
-	 - Kvízeim 
+	- Kvízeim 
 	   - A felhasználó ezen menüponton belül tudja megtekinteni az általa kitöltött illetve létrehozott kvízeket
 	   - Továbba itt tud létrehozni új kvízt, vagy egy meglévőt törölni, illetve módosítani
+	- Privát kvízhez csatalakozás
+	   - A felhasználó ezen a metüponton belül tudja majd megadni a privt kvízhez szükséges csatlakozásó kódot.
+	   - A kód megadása után a kvíz készítő elindítása után fog elkezdődni a kitöltés.
+	- Kijelentkezés
+	   - A gomb megynomása után egy felugró ablakon megkérdezzük a felhasználót, hogy biztosan ki szeretne-e lépni és amennyiben igen, akkor fog elkezdődni a kijeletkezési eljárás.
  - Kvízek létrehozása és azok központi tárolása.
      - A felhasználó kiválasztja a kvíz kategóriáját, megírja a kérdéseket, megírja hozzá a válaszokat és elmenti
 	 - Időkorlát megadása minden kérdéshez => A kvíz készítésekor meg kell adni egy időlimitet, aminek szintén lesz egy maximális limitje (pl: 60 másodperc).
@@ -64,14 +69,15 @@ Használati esetek
    - Superuser
    - Admin
    - Normál felhasználó
+
  - Szerepkörök
    - Superuser 
         - Ő rendelkezik minden jogosultsággal, adatbázison belül és a weboldalon belül egyaránt
 		- Törölhet felhasználót
 		- Törölheti bármelyik kvízt (akár privátot is)
-		- Felhasználó jogosultsági szintjét növelheti illetve csökkentheti
+		- Felhasználó jogosultsági szintjét növelheti, illetve csökkentheti
    - Admin 
-        - Az jogosultsági köre már szűkebb
+        - Az jogosultsági köre már bővebb
 		- kvízeket törölhet 
 		- Létrehozhat kvízt
 		- Saját fiókját törölheti/szerkesztheti
@@ -98,5 +104,13 @@ Forgatókönyvek
 Vágyálomrendszer
 ------------------
 
+A projekt célja egy webes kvízjáték rendszer, ahol az elérhető funkciók felhasználói kategóriánként eltérőek, például egy normál felhasználó számára más funkciók elérhetőek mint egy superuser számára, ezért a funkciók csak sikeres regisztráció és bejelentkezés után használhatóak.
+
+A normál felhasználókon felül kell magasabb rendű felhasználó, egy superuser, aki teljes hozzáféréssel rendelkezik a rendszerben. Az esetleges hibákat neki jelzik a felhasználók. A superuser korlátlanul módosíthatja, törölheti bármelyik kvízt, valamint a felhasználók adatait is módosíthatja vagy adhat hozzá új felhasználót. A normál felhasználó kitöltheti a kvízeket, de nem módosíthatja mindet önkényesen, csak a sajátjait.
+
+A kvíz létrehozása során, minden felhasználó készíthet komplexebb vagy szimplább kvízeket, függően attól, hogy milyen céllal, milyen témával fog rendelkezni.
+
 Fogalomszótár
 ------------------
+
+Komplex kvíz - Egy olyan kvíz, amelyben egy bonyolultabb témában vannak kérdések és ennek függvényében válaszok.

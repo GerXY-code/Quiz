@@ -18,11 +18,10 @@ Jelenlegi helyzet
 
 Vágyálom rendszer
 ------------------
-
 A projektün célja, hogy létrehozzunk egy olyan rendszert, melyet bárki, bármilyen környzeteben és eszközön tudjon használni úgy szórakozás, mint oktatás céljából.
 Ezen célok elérése érdekében legpraktikusabb megoldásként egy weboldal elkészítését választottuk, mivel így internet mellett bárki, bármilyen felületen használhassa.
 
-A kész programot szeretnénk majd, ha bárki a lehető legegyszerűbben tudja majd használni, tehát törekedünk majd a letisztultságra és egyszerűségre.
+
 
 A tanár felhasználók tudnak majd kérdőíveket létrehozni, minden létrehozott kérdéshez maximum 4 válaszlehetőséget és egy időkorlátot tud majd beállítani.
 
@@ -31,13 +30,16 @@ A diák felhasználók a tanárokkal együtt pedig tudják majd "végigjátszani
 Jelenlegi üzleti folyamatok modellje
 -------------------------------------
 
+A kvízek lényege, hogy egyes emberek vagy saját maguk tudását le tudják ellenőrizni, vagy pedig másokkal szemben eldöntsék, hogy kinek nagyobb a tudása egyes témakörökben.
+
+
 Igényelt üzleti olyamatok modellje
 ------------------------------------
 
-
-
-
-
+1. Online megjelenés.
+2. Felhasználók válaszainak adatbázisba történő elmentése.
+3. Egy kvíz, egy ember által, többszöri kitöltésre lesz alkalmas.
+4. Egy leaderboard felállítása minden ember számára, hogy melyik kvízt, milyen eredménnyel tudott kitölteni.
 
 
 Követelménylista
@@ -58,3 +60,4 @@ Követelménylista
 
 Fogalomszótár
 -----------------
+
