@@ -16,12 +16,12 @@ Jelenlegi helyzet
  - Publikus kvízek
    - Erre azért lehet szükség, mert akár egy kisebb fős baráti társaság egymás között szeretnének csak játszani, akkor a privát jellegét megkell tartani az alkalmazásnak.
 
-Vágyálomrendszer
+Vágyálom rendszer
 ------------------
 A projektün célja, hogy létrehozzunk egy olyan rendszert, melyet bárki, bármilyen környzeteben és eszközön tudjon használni úgy szórakozás, mint oktatás céljából.
 Ezen célok elérése érdekében legpraktikusabb megoldásként egy weboldal elkészítését választottuk, mivel így internet mellett bárki, bármilyen felületen használhassa.
 
-A kész programot szeretnénk majd, ha bárki a lehető legegyszerűbben tudja majd használni, tehát törekedünk majd a letisztultságra és egyszerűségre.
+
 
 A tanár felhasználók tudnak majd kérdőíveket létrehozni, minden létrehozott kérdéshez maximum 4 válaszlehetőséget és egy időkorlátot tud majd beállítani.
 
@@ -61,4 +61,3 @@ Követelménylista
 Fogalomszótár
 -----------------
 
-leaderboard - egyfajta dobogó, mely megmutat, csökkenő sorrendben egyes adatokat
