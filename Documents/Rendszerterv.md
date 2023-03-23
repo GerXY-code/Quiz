@@ -125,7 +125,7 @@ Fizikai környezet
 
  - Adatbázis: Oracle-MySQL
  - Programozási nyelvek
-   - Front-end: Javascript (React-al)
+   - Front-end: Javascript (jQuery-vel)
    - Back-end: PHP (Laravel keretrendszerrel)
    - Adatbázis: SQL, PL/SQL
  - Leíró nyelvek: HTML5 BOOTSTRAP-el, egyéni CSS3-al
@@ -266,9 +266,6 @@ Az adatbázis adattáblái:
 | answer_id         | int     | a kérdés azonosítója kerül bele         |
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
 
-
-Képernyőkép: 
-![adatbázis terv](https://user-images.githubusercontent.com/114657677/226694409-d9ea720b-d3c9-4c45-97bf-1d289ac59006.png)
 
 
 

@@ -18,7 +18,7 @@ Jelenlegi helyzet
 
 Vágyálom rendszer
 ------------------
-A projektün célja, hogy létrehozzunk egy olyan rendszert, melyet bárki, bármilyen környzeteben és eszközön tudjon használni úgy szórakozás, mint oktatás céljából.
+A projektünk célja, hogy létrehozzunk egy olyan rendszert, melyet bárki, bármilyen környzeteben és eszközön tudjon használni úgy szórakozás, mint oktatás céljából.
 Ezen célok elérése érdekében legpraktikusabb megoldásként egy weboldal elkészítését választottuk, mivel így internet mellett bárki, bármilyen felületen használhassa.
 
 
@@ -61,3 +61,4 @@ Követelménylista
 Fogalomszótár
 -----------------
 
+leaderboard - egyfajta dobogó, mely megmutat, csökkenő sorrendben egyes adatokat
