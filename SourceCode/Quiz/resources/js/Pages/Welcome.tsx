@@ -1,15 +1,64 @@
-import { Link, Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
+import { Link, Head } from "@inertiajs/react";
+import { PageProps } from "@/types";
+import { useState } from "react";
+import { ToggleButton } from "@/Components/ToggleButton";
 
-export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
+export default function Welcome({
+    auth,
+    laravelVersion,
+    phpVersion,
+}: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+    const [isToggled, setIsToggled] = useState(false);
     return (
         <>
             <Head title="Welcome" />
             <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+                <div className="fixed top-6 left-6">
+                    <div className="toggle-container flex justify-center items-center hover:cursor-pointer">
+                        <ToggleButton
+                            label=""
+                            isToggled={isToggled}
+                            handleToggle={() => setIsToggled(!isToggled)}
+                        />
+                        <div className="ml-2">
+                            {isToggled ? (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6 text-cyan-50"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                    />
+                                </svg>
+                            ) : (
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6 text-gray-600"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                                    />
+                                </svg>
+                            )}
+                        </div>
+                    </div>
+                </div>
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     {auth.user ? (
                         <Link
-                            href={route('dashboard')}
+                            href={route("dashboard")}
                             className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                         >
                             Dashboard
@@ -17,14 +66,14 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
                     ) : (
                         <>
                             <Link
-                                href={route('login')}
+                                href={route("login")}
                                 className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Log in
                             </Link>
 
                             <Link
-                                href={route('register')}
+                                href={route("register")}
                                 className="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
                                 Register
@@ -76,9 +125,12 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel has wonderful documentation covering every aspect of the framework.
-                                        Whether you are a newcomer or have prior experience with Laravel, we recommend
-                                        reading our documentation from beginning to end.
+                                        Laravel has wonderful documentation
+                                        covering every aspect of the framework.
+                                        Whether you are a newcomer or have prior
+                                        experience with Laravel, we recommend
+                                        reading our documentation from beginning
+                                        to end.
                                     </p>
                                 </div>
 
@@ -122,9 +174,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
-                                        development. Check them out, see for yourself, and massively level up your
-                                        development skills in the process.
+                                        Laracasts offers thousands of video
+                                        tutorials on Laravel, PHP, and
+                                        JavaScript development. Check them out,
+                                        see for yourself, and massively level up
+                                        your development skills in the process.
                                     </p>
                                 </div>
 
@@ -169,9 +223,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the
-                                        latest and most important news in the Laravel ecosystem, including new package
-                                        releases and tutorials.
+                                        Laravel News is a community driven
+                                        portal and newsletter aggregating all of
+                                        the latest and most important news in
+                                        the Laravel ecosystem, including new
+                                        package releases and tutorials.
                                     </p>
                                 </div>
 
@@ -213,71 +269,73 @@ export default function Welcome({ auth, laravelVersion, phpVersion }: PageProps<
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as{' '}
+                                        Laravel's robust library of first-party
+                                        tools and libraries, such as{" "}
                                         <a
                                             href="https://forge.laravel.com"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Forge
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://vapor.laravel.com"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Vapor
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://nova.laravel.com"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Nova
                                         </a>
-                                        , and{' '}
+                                        , and{" "}
                                         <a
                                             href="https://envoyer.io"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Envoyer
-                                        </a>{' '}
-                                        help you take your projects to the next level. Pair them with powerful open
-                                        source libraries like{' '}
+                                        </a>{" "}
+                                        help you take your projects to the next
+                                        level. Pair them with powerful open
+                                        source libraries like{" "}
                                         <a
                                             href="https://laravel.com/docs/billing"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Cashier
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://laravel.com/docs/dusk"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Dusk
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://laravel.com/docs/broadcasting"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Echo
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://laravel.com/docs/horizon"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Horizon
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://laravel.com/docs/sanctum"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                             Sanctum
                                         </a>
-                                        ,{' '}
+                                        ,{" "}
                                         <a
                                             href="https://laravel.com/docs/telescope"
                                             className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
