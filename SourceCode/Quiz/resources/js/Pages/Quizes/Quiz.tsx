@@ -4,18 +4,10 @@ import { Head } from '@inertiajs/react';
 
 export default function Quizes({ quizes }: any) {
     
-    let quizList = [];
-    for(const i in quizes){
-        quizList.push(quizes[i]);
-        
-    }
-    
-    //console.log(quizList);
-
     return (
         
         <QuizesLayout
-           quiz={quizList}
+           quiz={quizes}
         >
             <Head title="Dashboard" />
 
