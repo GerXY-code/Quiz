@@ -33,7 +33,7 @@ CREATE TABLE `answers` (
   `answer_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `answer_3` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `answer_4` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `correct_answer` tinytext COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `correct_answer` tinyint COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
