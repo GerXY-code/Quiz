@@ -128,7 +128,7 @@ CREATE TABLE `questions` (
 -- Table structure for table `quizes`
 --
 
-CREATE TABLE `quizes` (
+CREATE TABLE `quizzes` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
