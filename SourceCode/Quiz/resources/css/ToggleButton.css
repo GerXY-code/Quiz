@@ -1,0 +1,4 @@
+.toggle-checkbox:checked + .toggle-label .toggle-slider {
+  left: calc(100%);
+  transform: translateX(-100%);
+}
