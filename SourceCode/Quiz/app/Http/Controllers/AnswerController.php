@@ -5,13 +5,13 @@ use Inertia\Inertia;
 use Inertia\Response;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use \App\Models\Quiz;
+use \App\Models\Answer;
 use Illuminate\Support\Facades\Validator;
 
-class QuizController extends Controller
+class AnswerController extends Controller
 {
-    public function index(Request $request){
-        $quizes = Answer::all();
+    public function index(){
+        $answers = Answer::select('answer_1','answer_2','answer_3','answer_4')->get();
 
 
         //Outputting for debug, default commented out
@@ -22,9 +22,6 @@ class QuizController extends Controller
             echo $q['category'];
         }
         */
-        return Inertia::render('Quizes/Quiz', ['quizes' => $quizes]);
-
-
+        return Inertia::render('Quizes/Answer', ['answers' => $answers]);
     }
-  
 }

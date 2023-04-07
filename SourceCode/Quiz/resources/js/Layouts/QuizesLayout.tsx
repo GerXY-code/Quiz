@@ -5,10 +5,16 @@ import { PropsWithChildren } from 'react';
 export default function GetQuizes({ quiz }: PropsWithChildren<{quiz:any}>) {
     
 
+
+
+
+    //Delete this snippet of code, if you don't need it
     /*quiz.forEach((element: any) => {
         console.log(element);
     });
     */
+    
+
     
    
 
