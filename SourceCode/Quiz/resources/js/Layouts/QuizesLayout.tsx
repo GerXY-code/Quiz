@@ -5,9 +5,10 @@ import { PropsWithChildren } from 'react';
 export default function GetQuizes({ quiz }: PropsWithChildren<{quiz:any}>) {
     
 
-    quiz.forEach((element: any) => {
+    /*quiz.forEach((element: any) => {
         console.log(element);
     });
+    */
     
    
 
@@ -20,10 +21,8 @@ export default function GetQuizes({ quiz }: PropsWithChildren<{quiz:any}>) {
                 </Link>
             </div>
             <div>
-            {quiz.map((item: any) => (
-                <div className='indent'>{item.title}</div>
-                
-
+            {quiz.map((item: any, index: any) => (
+                <div className='indent' key={index}>{item.title}</div>
                 ))}
             </div>
         </div>

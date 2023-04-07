@@ -9,6 +9,7 @@ declare class Quiz {
     id: number;
     title:string;
     category:string;
+    is_private:boolean;
 
 }
 
