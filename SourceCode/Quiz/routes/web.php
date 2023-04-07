@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Inertia\Inertia;
 |
 */
 
-
+Route::resource('/getQuizes', QuizController::class);
 
 Route::get('/', function () {
     return Inertia::render('Auth/Login', [

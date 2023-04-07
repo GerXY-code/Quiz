@@ -14,7 +14,7 @@
     "@types/ziggy-js": "^1.3.2",
     "@vitejs/plugin-react": "^3.0.0",
     "autoprefixer": "^10.4.12",
-    "axios": "^1.1.2",
+    "axios": "^1.3.5",
     "laravel-vite-plugin": "^0.7.2",
     "postcss": "^8.4.18",
     "react": "^18.2.0",
@@ -31,5 +31,11 @@
     "test": "tests"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react-bootstrap": "^2.7.2",
+    "react-router-dom": "^6.10.0",
+    "sweetalert2": "^11.7.3"
+  }
 }
