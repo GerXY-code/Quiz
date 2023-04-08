@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class QuizController extends Controller
 {
     public function index(Request $request){
-        $quizes = Answer::all();
+        $quizzes = Quiz::all();
 
 
         //Outputting for debug, default commented out
@@ -22,7 +22,7 @@ class QuizController extends Controller
             echo $q['category'];
         }
         */
-        return Inertia::render('Quizes/Quiz', ['quizes' => $quizes]);
+        return Inertia::render('Quizzes/Quiz', ['quizzes' => $quizzes]);
 
 
     }
