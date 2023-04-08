@@ -17,9 +17,8 @@ use App\Http\Controllers\AnswerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::resource('/getQuizes', QuizController::class);
-Route::resource('/getAnswers', AnswerController::class);
+Route::resource('/quizzes', QuizController::class);
+Route::resource('/answers', AnswerController::class);
 
 
 Route::get('/', function () {

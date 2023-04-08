@@ -1,14 +1,9 @@
-import QuizesLayout from '@/Layouts/QuizesLayout';
-import { Head } from '@inertiajs/react';
+import QuizzesLayout from "@/Layouts/QuizzesLayout";
+import { Head } from "@inertiajs/react";
 
-
-export default function Quizes({ quizes }: any) {
-    
+export default function Quiz({ quizzes }: { quizzes: Quiz[] }) {
     return (
-        
-        <QuizesLayout
-           quiz={quizes}
-        >
+        <QuizzesLayout quizzes={quizzes}>
             <Head title="Dashboard" />
 
             <div className="py-12">
@@ -18,6 +13,6 @@ export default function Quizes({ quizes }: any) {
                     </div>
                 </div>
             </div>
-        </QuizesLayout>
+        </QuizzesLayout>
     );
 }
