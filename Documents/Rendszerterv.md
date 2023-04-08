@@ -234,21 +234,11 @@ Az adatbázis adattáblái:
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
 
 
-
-
 **questions** (A kvízekhez tartozó kérdések azonosítók alapján)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | question            	| varchar     |   egy adott kvízhez tartozó kérdés           |
-
-
-**quiz_questions** (A quizess és a questions táblák kapcsolótáblája)<br>
-| Mező          	| Típus   | Leírás                                 	|
-|-----------------|---------|----------------------------------------	|
-| id            	| int     | azonosító, elsődleges kulcs             |
-| quiz_id           | int     | a quizess tábla azonosítója kerül bele  |
-| question_id       | int     | a kérdés azonosítója kerül bele         |
 
 
 **answers** (A kvízekhre adott válaszok ide kerülnek be)<br>
