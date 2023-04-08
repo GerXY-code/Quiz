@@ -128,12 +128,11 @@ Fizikai környezet
    - Front-end: Javascript (React-al, Inertia.js, Typescript)
    - Back-end: PHP (Laravel keretrendszerrel)
    - Adatbázis: SQL, PL/SQL
- - Leíró nyelvek: HTML5 BOOTSTRAP-el, egyéni CSS3-al
+ - Leíró nyelvek: HTML5 Tailwind CSS-el
  - Fejlesztői eszközök
    - Visual Studio Code
    - XAMPP (Apache és MySQL service)
    - MySQL workbench
-   - Figma
  - Verziókezelést segítő eszközök
    - Github Desktop
  - Az alkalmazás jellege
