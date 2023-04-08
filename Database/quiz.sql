@@ -229,9 +229,9 @@ ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `quizes`
+-- Indexes for table `quizzes`
 --
-ALTER TABLE `quizes`
+ALTER TABLE `quizzes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -288,9 +288,9 @@ ALTER TABLE `questions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `quizes`
+-- AUTO_INCREMENT for table `quizzes`
 --
-ALTER TABLE `quizes`
+ALTER TABLE `quizzes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
