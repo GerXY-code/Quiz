@@ -125,7 +125,7 @@ Fizikai környezet
 
  - Adatbázis: Oracle-MySQL
  - Programozási nyelvek
-   - Front-end: Javascript (jQuery-vel)
+   - Front-end: Javascript (React-al, Inertia.js, Typescript)
    - Back-end: PHP (Laravel keretrendszerrel)
    - Adatbázis: SQL, PL/SQL
  - Leíró nyelvek: HTML5 BOOTSTRAP-el, egyéni CSS3-al
