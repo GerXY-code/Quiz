@@ -255,7 +255,12 @@ Az adatbázis adattáblái:
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
-| answer            	| varchar     |   egy adott kvízhez tartozó válasz     |
+| answer_1            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
+| answer_2            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
+| answer_3            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
+| answer_4            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
+| correct_answer            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+
 
 **quiz_question_answers** (Egy kvíz kitöltésekor töltődik fel)<br>
 | Mező          	| Típus   | Leírás                                 	|
