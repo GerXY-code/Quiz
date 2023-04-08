@@ -1,9 +1,9 @@
 import QuizzesLayout from "@/Layouts/QuizzesLayout";
 import { Head } from "@inertiajs/react";
 
-export default function Quiz({ quizzes }: any) {
+export default function Quiz({ quizzes }: { quizzes: Quiz[] }) {
     return (
-        <QuizzesLayout quiz={quizzes}>
+        <QuizzesLayout quizzes={quizzes}>
             <Head title="Dashboard" />
 
             <div className="py-12">
