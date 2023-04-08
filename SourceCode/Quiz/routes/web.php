@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AnswerController;
+use App\Http\Controllers\QuizQuestionAnswerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,7 @@ use App\Http\Controllers\AnswerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('/getobj', QuizQuestionAnswerController::class);
 Route::resource('/quizzes', QuizController::class);
 Route::resource('/answers', AnswerController::class);
 

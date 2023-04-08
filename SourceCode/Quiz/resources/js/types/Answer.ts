@@ -3,5 +3,5 @@ type Answer = {
     answer_2?: string;
     answer_3?: string;
     answer_4?: string;
-    correct_answer: number;
+    correct_answer: string; /**In the db table, it will be string */
 }

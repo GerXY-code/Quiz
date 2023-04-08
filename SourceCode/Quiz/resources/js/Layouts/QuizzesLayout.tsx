@@ -5,6 +5,7 @@ import { PropsWithChildren } from "react";
 export default function QuizzesLayout({
     quizzes,
 }: PropsWithChildren<{ quizzes: Quiz[] }>) {
+    console.log(quizzes);
     return (
         <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>

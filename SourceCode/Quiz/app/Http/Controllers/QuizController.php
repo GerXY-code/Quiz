@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 
 class QuizController extends Controller
 {
+    
     public function index(Request $request){
         $quizzes = Quiz::all();
 
@@ -26,5 +27,10 @@ class QuizController extends Controller
 
 
     }
+    
+
+
+        
+    
   
 }

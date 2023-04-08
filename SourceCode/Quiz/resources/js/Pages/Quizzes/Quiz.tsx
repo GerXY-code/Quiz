@@ -2,6 +2,7 @@ import QuizzesLayout from "@/Layouts/QuizzesLayout";
 import { Head } from "@inertiajs/react";
 
 export default function Quiz({ quizzes }: { quizzes: Quiz[] }) {
+    console.log(quizzes);
     return (
         <QuizzesLayout quizzes={quizzes}>
             <Head title="Dashboard" />
