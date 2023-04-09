@@ -4,7 +4,6 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuizQuestionAnswerController;
 
@@ -19,8 +18,7 @@ use App\Http\Controllers\QuizQuestionAnswerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/getobj', QuizQuestionAnswerController::class);
-Route::resource('/quizzes', QuizController::class);
+Route::resource('/quiz', QuizQuestionAnswerController::class);
 Route::resource('/answers', AnswerController::class);
 
 
@@ -33,9 +31,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', function () {
+    return Inertia::render('Home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
