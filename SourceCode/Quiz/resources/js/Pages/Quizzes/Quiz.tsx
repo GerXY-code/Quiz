@@ -16,6 +16,10 @@ export default function Quiz({ quiz, auth }: { quiz: Quiz; auth: User }) {
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-100">
                         <div className="p-6">
                             <h1>{quiz.questions[index].question}</h1>
+                            <h1>{quiz.title}</h1>
+                            <h1>{quiz.category}</h1>
+                            <h1>{quiz.is_private}</h1>
+
                         </div>
                         <div className="p-6">
                             <div className="grid grid-cols-2">

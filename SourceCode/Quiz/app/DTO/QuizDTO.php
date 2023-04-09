@@ -8,7 +8,7 @@ class QuizDTO
         public readonly string $title,
         public readonly string $category,
         public readonly array $questions,
-        public readonly bool $is_private
+        public readonly int $is_private
     ) {}
 }
 
