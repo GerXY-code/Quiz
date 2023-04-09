@@ -5,8 +5,8 @@ namespace App\DTO;
 class QuestionDTO
 {
     public function __construct(
-        public int $number,
-        public string $question,
-        public AnswerDTO $answer) {}
+        public readonly int $number,
+        public readonly string $question,
+        public readonly AnswerDTO $answer) {}
 
 }
