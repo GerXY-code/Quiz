@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuizQuestionAnswerController;
+use App\Http\Controllers\QuizController;
 
 
 /*
@@ -20,6 +21,7 @@ use App\Http\Controllers\QuizQuestionAnswerController;
 */
 Route::resource('/quiz', QuizQuestionAnswerController::class);
 Route::resource('/answers', AnswerController::class);
+Route::resource('/allquizzes', QuizController::class);
 
 
 Route::get('/', function () {

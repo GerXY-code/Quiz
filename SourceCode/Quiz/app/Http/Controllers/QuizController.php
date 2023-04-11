@@ -11,24 +11,14 @@ use Illuminate\Support\Facades\Validator;
 class QuizController extends Controller
 {
     
-    public function index(Request $request){
-        $quizzes = Quiz::all();
+    public function index(){
 
+        //Only the public quizzes will be showing up in the starter page
+        $queryResult = Quiz::select('*')->where('is_private', '=', 0)->get();
 
-        //Outputting for debug, default commented out
-        /*
-        foreach($quizes as $q){
-            echo $q['title'];
-            echo ' ';
-            echo $q['category'];
-        }
-        */
-        return Inertia::render('Quizzes/Quiz', ['quizzes' => $quizzes]);
-
+        return Inertia::render('Quizzes/AllQuiz', ['quiz' => $queryResult]);
 
     }
-    
-
 
         
     
