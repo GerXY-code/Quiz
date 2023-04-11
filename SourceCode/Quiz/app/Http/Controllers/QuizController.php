@@ -7,6 +7,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use \App\Models\Quiz;
 use Illuminate\Support\Facades\Validator;
+use \App\DTO\AllQuizDTO;
+
 
 class QuizController extends Controller
 {
@@ -15,8 +17,11 @@ class QuizController extends Controller
 
         //Only the public quizzes will be showing up in the starter page
         $queryResult = Quiz::select('*')->where('is_private', '=', 0)->get();
+     
 
-        return Inertia::render('Quizzes/AllQuiz', ['quiz' => $queryResult]);
+        
+
+        //return Inertia::render('Quizzes/AllQuiz', ['quiz' => $queryResult]);
 
     }
 
