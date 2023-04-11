@@ -16,7 +16,6 @@ return new class extends Migration
                 $table->string('title');
                 $table->string('category');
                 $table->boolean('is_private');
-                $table->string('correct_answer');
         });
     }
 
