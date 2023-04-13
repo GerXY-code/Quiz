@@ -22,8 +22,6 @@ use App\Http\Controllers\QuizController;
 // route will be /quiz/{id}...
 Route::get('/quiz', [QuizController::class, 'getById'])->name('quiz.getById');
 Route::resource('/answers', AnswerController::class);
-Route::resource('/allquizzes', QuizController::class);
-
 
 Route::get('/', function () {
     return Inertia::render('Auth/Login', [
