@@ -5,7 +5,6 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\AnswerController;
-use App\Http\Controllers\QuizQuestionAnswerController;
 use App\Http\Controllers\QuizController;
 
 
@@ -19,7 +18,9 @@ use App\Http\Controllers\QuizController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/quiz', QuizQuestionAnswerController::class);
+
+// route will be /quiz/{id}...
+Route::get('/quiz', [QuizController::class, 'getById'])->name('quiz.getById');
 Route::resource('/answers', AnswerController::class);
 Route::resource('/allquizzes', QuizController::class);
 
@@ -34,7 +35,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', function () {
-    return Inertia::render('Home');
+    $quizzes = app(QuizController::class)->getAll();
+    return Inertia::render('Home', [
+        'quizzes' => $quizzes
+    ]);
 })->middleware(['auth', 'verified'])->name('home');
 
 Route::middleware('auth')->group(function () {

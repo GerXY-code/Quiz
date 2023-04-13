@@ -1,7 +1,8 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { PageProps } from "@/types";
+import { HomeProps } from "@/types/HomeProps";
 
-export default function Home({ auth }: PageProps) {
+export default function Home({ auth, quizzes }: HomeProps) {
+    console.log(quizzes);
     return (
         <AuthenticatedLayout user={auth.user}>
             <div className="py-12">
