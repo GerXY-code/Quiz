@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -14,14 +13,12 @@ class AnswerSeeder extends Seeder
      */
     public function run(): void
     {
-        $randomString = Str::random(10);
-        DB::table('answers')->insert([
-            'answer_1' => Str::random(10),
-            'answer_2' => Str::random(10),
-            'answer_3' => Str::random(10),
-            'answer_4' => $randomString,
-            'correct_answer' => $randomString
-
-        ]);
+        $answers = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $answers["answer_{$i}"] = Str::random(10);
+        }
+        $correct_index = mt_rand(1,4);
+        $answers["correct_answer"] = $answers["answer_{$correct_index}"];
+        DB::table('answers')->insert($answers);
     }
 }
