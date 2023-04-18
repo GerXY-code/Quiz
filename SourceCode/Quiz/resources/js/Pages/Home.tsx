@@ -9,10 +9,12 @@ export default function Home({ auth, quizzes }: HomeProps) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">
-                            <div className="grid grid-cols-3 m-2">
+                            <div className="grid grid-cols-4 m-2 flex items-center ">
                                 {quizzes.map((quiz) => (
-                                    <PrimaryButton className="m-2">
-                                        {quiz.title}
+                                    <PrimaryButton className="m-2 w-64 h-48">
+                                        <div className="mx-auto">
+                                            <p>{quiz.title}</p>
+                                        </div>
                                     </PrimaryButton>
                                 ))}
                             </div>
