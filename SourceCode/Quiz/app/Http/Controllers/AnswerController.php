@@ -24,4 +24,15 @@ class AnswerController extends Controller
         */
         return Inertia::render('Quizes/Answer', ['answers' => $answers]);
     }
+
+    public function createAnswers(Request $request){
+        Answer::create([
+            'answer_1'       => $request['answer_1'], 
+            'answer_2'       => $request['answer_2'], 
+            'answer_3'       => $request['answer_3'], 
+            'answer_4'       => $request['answer_4'], 
+            'correct_answer' => $request['correct_answer'], 
+
+        ]);
+    }
 }

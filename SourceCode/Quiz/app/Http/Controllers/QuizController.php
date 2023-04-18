@@ -31,6 +31,15 @@ class QuizController extends Controller
 
     }
 
+    public function createQuiz(Request $request){
+        Quiz::create([
+                'title'      => $request['title'],
+                'category'   => $request['category'],
+                'is_private' => $request['is_private']
+        ]);
+    }
+
+
     private function mapToQuizDTO($queryResult) {
         $questions = [];
         $title = $queryResult[0]->title;
