@@ -20,7 +20,18 @@ use App\Http\Controllers\QuizController;
 */
 
 // route will be /quiz/{id}...
-Route::get('/quiz', [QuizController::class, 'getById'])->name('quiz.getById');
+
+Route::post('/quiz', function() {
+
+    $getid = $_POST;
+    $output = new Symfony\Component\Console\Output\ConsoleOutput();
+    $output->writeln("<info>{$getid}</info>");
+        $quiz = app(QuizController::class)->getByID();
+        return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
+});
+
+
+//Route::get('/quiz/{id}', [QuizController::class, 'getById'])->name('quiz.getById');
 Route::resource('/answers', AnswerController::class);
 
 Route::get('/', function () {
