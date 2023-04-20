@@ -19,7 +19,6 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                             <h1>{quiz.title}</h1>
                             <h1>{quiz.category}</h1>
                             <h1>{quiz.is_private}</h1>
-
                         </div>
                         <div className="p-6">
                             <div className="grid grid-cols-2">
