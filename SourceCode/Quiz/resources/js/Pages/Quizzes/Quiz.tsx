@@ -4,7 +4,6 @@ import { QuizProps } from "@/types/QuizProps";
 import { useState } from "react";
 
 export default function Quiz({ auth, quiz }: QuizProps) {
-    console.log('asd');
     const [index, setIndex] = useState(0);
     function increaseIndex() {
         if (index == quiz.questions.length - 1) return;
@@ -20,7 +19,6 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                             <h1>{quiz.title}</h1>
                             <h1>{quiz.category}</h1>
                             <h1>{quiz.is_private}</h1>
-
                         </div>
                         <div className="p-6">
                             <div className="grid grid-cols-2">
