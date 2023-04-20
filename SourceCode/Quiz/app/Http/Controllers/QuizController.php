@@ -1,47 +1,31 @@
 <?php
 
 namespace App\Http\Controllers;
-use Inertia\Inertia;
 use \App\Models\Quiz;
 use \App\DTO\AnswerDTO;
 use \App\DTO\QuestionDTO;
 use \App\DTO\QuizDTO;
 use \App\Models\QuizQuestionAnswers;
-
-
+use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
 
     
-    public function getById($quizID){
-       
+    public function getById($quizId){
         $queryResult = QuizQuestionAnswers::select('*')->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
             ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
             ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
-            ->where('qz.id','=', $quizID)
+            ->where('qz.id','=', $quizId)
             ->get();
 
-        //$quiz = $this->mapToQuizDTO($queryResult);        
-        return $queryResult;
-        //return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
+        $quiz = $this->mapToQuizDTO($queryResult);        
+        return $quiz;
     }
     
-
-    
-
-    /*public function getById($quizID){
-     
-        $queryResult = Quiz::select('*')->where('id', '=', $quizID)->get();
-        return $queryResult;
-    }*/
-
-    
     public function getAll(){
-
         $queryResult = Quiz::select('*')->where('is_private', '=', 0)->get();
         return $queryResult;
-
     }
 
     public function createQuiz(Request $request){
@@ -51,7 +35,6 @@ class QuizController extends Controller
                 'is_private' => $request['is_private']
         ]);
     }
-
 
     private function mapToQuizDTO($queryResult) {
         $questions = [];
