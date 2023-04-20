@@ -21,14 +21,15 @@ use App\Http\Controllers\QuizController;
 
 // route will be /quiz/{id}...
 
-Route::post('/quiz', function() {
+Route::get('/quiz/{id}', function() {
 
-    $getid = $_POST;
-    $output = new Symfony\Component\Console\Output\ConsoleOutput();
-    $output->writeln("<info>{$getid}</info>");
-        $quiz = app(QuizController::class)->getByID();
+        $quizID = $_GET['param'];
+        //$quiz = app(QuizController::class)->getByID($quizID);
+        //$output = new Symfony\Component\Console\Output\ConsoleOutput();
+        $output->writeln("<info>{$quiz}</info>");
+
         return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
-});
+})->middleware(['auth', 'verified'])->name('quiz');
 
 
 //Route::get('/quiz/{id}', [QuizController::class, 'getById'])->name('quiz.getById');

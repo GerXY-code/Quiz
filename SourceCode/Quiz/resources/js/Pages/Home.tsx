@@ -3,13 +3,12 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { HomeProps } from "@/types/HomeProps";
 
 export default function Home({ auth, quizzes }: HomeProps) {
-    function test(id:number){
-        fetch(`/quiz`, {
-            method : "POST",
-            body: JSON.stringify({
+    function loadQuiz(id:number){
+        fetch(`/quiz/param?param=${id}`, {
+            method : "GET",
+            /*body: JSON.stringify({
                 getid : id
-            }),
-            headers: { Accept: "application/json", "Content-Type": "application/json"}
+            }),*/
         })
         .then(response => console.log(response)) 
     }
@@ -23,7 +22,7 @@ export default function Home({ auth, quizzes }: HomeProps) {
                         <div className="p-6 text-gray-900 dark:text-gray-100">
                             <div className="grid grid-cols-3 m-2">
                                 {quizzes.map((quiz) => (
-                                    <PrimaryButton className="m-2" onClick={()=>test(quiz.id)}>
+                                    <PrimaryButton className="m-2" onClick={()=>loadQuiz(quiz.id)}>
                                         {quiz.title}
                                     </PrimaryButton>
                                 ))}

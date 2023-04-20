@@ -4,6 +4,7 @@ import { QuizProps } from "@/types/QuizProps";
 import { useState } from "react";
 
 export default function Quiz({ auth, quiz }: QuizProps) {
+    console.log('asd');
     const [index, setIndex] = useState(0);
     function increaseIndex() {
         if (index == quiz.questions.length - 1) return;
