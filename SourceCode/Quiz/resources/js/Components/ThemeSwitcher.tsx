@@ -3,9 +3,9 @@ import { useDarkMode } from "@/hooks/useDarkMode";
 export default function ThemeSwitcher() {
     const [isToggled, setIsToggled] = useDarkMode();
     return (
-        <div className="fixed top-2 left-6">
+        <div>
             <div
-                className="toggle-container flex justify-center items-center rounded-full hover:cursor-pointer dark:hover:bg-gray-800/50 hover:bg-white/50 p-4"
+                className="rounded-full hover:cursor-pointer dark:hover:bg-gray-800/50 hover:bg-white/50 p-4"
                 onClick={() => setIsToggled(!isToggled)}
             >
                 {isToggled ? (
