@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Http\Request;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuizController;
 
@@ -19,20 +20,12 @@ use App\Http\Controllers\QuizController;
 |
 */
 
-// route will be /quiz/{id}...
+Route::get('/quiz/{id}', function (Request $request) {
+    $quizId = $request->route('id');
+    $quiz = app(QuizController::class)->getById($quizId);
+    return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
+});
 
-Route::get('/quiz/{id}', function() {
-
-        $quizID = $_GET['param'];
-        //$quiz = app(QuizController::class)->getByID($quizID);
-        //$output = new Symfony\Component\Console\Output\ConsoleOutput();
-        $output->writeln("<info>{$quiz}</info>");
-
-        return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
-})->middleware(['auth', 'verified'])->name('quiz');
-
-
-//Route::get('/quiz/{id}', [QuizController::class, 'getById'])->name('quiz.getById');
 Route::resource('/answers', AnswerController::class);
 
 Route::get('/', function () {
