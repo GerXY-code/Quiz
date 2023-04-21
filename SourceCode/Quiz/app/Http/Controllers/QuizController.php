@@ -10,14 +10,16 @@ use Illuminate\Http\Request;
 
 class QuizController extends Controller
 {
-
     
     public function getById($quizId){
-        $queryResult = QuizQuestionAnswers::select('*')->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
-            ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
-            ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
-            ->where('qz.id','=', $quizId)
+        $queryResult = QuizQuestionAnswers::select('*')
+            ->from('quiz_question_answers as qqa')
+            ->join('questions as q', 'q.id', '=', 'qqa.question_id')
+            ->join('answers as a', 'a.id', '=', 'qqa.answer_id')
+            ->join('quizzes as qz', 'qz.id', '=', 'qqa.quiz_id')
+            ->where('qqa.id', '=', $quizId)
             ->get();
+
 
         $quiz = $this->mapToQuizDTO($queryResult);        
         return $quiz;
