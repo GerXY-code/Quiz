@@ -13,18 +13,28 @@ class QuizController extends Controller
 
     
     public function getById($quizId){
-        $queryResult = QuizQuestionAnswers::select('*')->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
+        $queryResult = 
+        QuizQuestionAnswers::select('*')
+            ->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
             ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
             ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
             ->where('qz.id','=', $quizId)
             ->get();
 
-        $quiz = $this->mapToQuizDTO($queryResult);        
-        return $quiz;
+        if ($queryResult->isEmpty()) {
+            return [];
+        }
+        return $this->mapToQuizDTO($queryResult);        
     }
     
     public function getAll(){
-        $queryResult = Quiz::select('*')->where('is_private', '=', 0)->get();
+        $queryResult = 
+        QuizQuestionAnswers::select('qz.id','qz.title','qz.category')
+            ->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
+            ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
+            ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
+            ->distinct()
+            ->get();
         return $queryResult;
     }
 
