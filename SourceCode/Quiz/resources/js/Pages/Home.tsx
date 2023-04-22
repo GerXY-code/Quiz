@@ -19,6 +19,7 @@ export default function Home({ auth, quizzes }: HomeProps) {
                                         hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300
                                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
                                     >
+                                        <img src={quiz.quiz_cover}></img>
                                         {quiz.title}
                                     </Link>
                                 ))}
