@@ -15,6 +15,7 @@ return new class extends Migration
                 $table->id();
                 $table->string('title');
                 $table->string('category');
+                $table->string('quiz_cover');
                 $table->boolean('is_private');
         });
     }

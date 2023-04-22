@@ -29,7 +29,7 @@ class QuizController extends Controller
     
     public function getAll(){
         $queryResult = 
-        QuizQuestionAnswers::select('qz.id','qz.title','qz.category')
+        QuizQuestionAnswers::select('qz.id','qz.title','qz.category','qz.quiz_cover')
             ->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
             ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
             ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
@@ -50,6 +50,7 @@ class QuizController extends Controller
         $questions = [];
         $title = $queryResult[0]->title;
         $category = $queryResult[0]->category;
+        $cover    = $queryResult[0]->quiz_cover;
         $is_private = $queryResult[0]->is_private;
         foreach($queryResult as $index) {
             $answers = [];
@@ -66,7 +67,7 @@ class QuizController extends Controller
             array_push($questions, $question);
         }
 
-        $quizDTO = new QuizDTO($title, $category, $questions, $is_private);
+        $quizDTO = new QuizDTO($title, $category, $cover, $questions, $is_private);
         return $quizDTO;
     }
 

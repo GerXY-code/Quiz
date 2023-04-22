@@ -20,6 +20,7 @@ export default function Home({ auth, quizzes }: HomeProps) {
                                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
                                     >
                                         {quiz.title}
+                                        <img src=".storage/app/public/uploads/math.png"></img>
                                     </Link>
                                 ))}
                             </div>
