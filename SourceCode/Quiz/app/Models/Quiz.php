@@ -12,6 +12,7 @@ class Quiz extends Model
     protected $fillable = [
             'title',
             'category',
+            'quiz_cover',
             'is_private'
     ];
 }

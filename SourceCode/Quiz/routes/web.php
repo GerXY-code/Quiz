@@ -26,7 +26,15 @@ Route::get('/quiz/{id}', function (Request $request) {
     return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
 });
 
-Route::resource('/answers', AnswerController::class);
+
+Route::get('/insertquiz', function(Request $request) {
+   
+    $result = app(QuizController::class)->createQuiz($request);
+
+});
+
+
+//Route::resource('/answers', AnswerController::class);
 
 Route::get('/', function () {
     return Inertia::render('Auth/Login', [
