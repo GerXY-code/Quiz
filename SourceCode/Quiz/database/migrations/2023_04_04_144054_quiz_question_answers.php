@@ -17,6 +17,8 @@ return new class extends Migration
                 $table->integer('question_id');
                 $table->integer('answer_id');
                 $table->integer('user_id');
+                $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
