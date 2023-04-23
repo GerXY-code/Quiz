@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('questions', function(Blueprint $table){
                 $table->id();
                 $table->string('question');
+                $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+                $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
