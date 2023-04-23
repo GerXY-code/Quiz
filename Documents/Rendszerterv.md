@@ -1,4 +1,4 @@
-﻿Rendszerterv
+Rendszerterv
 ==========================
 
 Rendszer célja
@@ -170,7 +170,6 @@ Az adatbázis adattáblái:
 |-------------------	|----------	|-----------------------------	   |
 | id          	      | bigint     	| azonosító, elsődleges kulcs      |
 | name               	| varchar  	| felhasználó neve                 |
-| role_id          	  | int      	| szerepkör                        |
 | email             	| varchar  	| email címet tartalmaző mező      |
 | email_verified_at       	| timestamp  	| mikor hitelesítette az email címét      |
 | password          	| varchar  	| jelszót tartalmazó mező     	   |
@@ -218,13 +217,16 @@ Az adatbázis adattáblái:
 | exception            | longtext | kivétel                          |
 | failed_at            | timestamp | sikertelenség ideje                          |
 
-**quizess** (A kvízek ebben a táblában kerülnek eltárolásra)
+**quizzes** (A kvízek ebben a táblában kerülnek eltárolásra)
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | title            	| varchar     |   a kvíz címe           |
 | category            	| varchar     |   a kvíz kategóriája           |
-| is_private            	| boolean     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
+| is_private            	| tinyint     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
+| quiz_cover          	| varchar     |   Cover a kvízekhez   |
+| created_at            	| timestamp     |   azt mutatja meg, hogy a kvízt mikor hozták létre   |
+| updated_at            	| timestamp     |   azt mutatja meg, hogy a kvízt mikor módosították utóljára   |
 
 **quiz_users** (Kapcsolótábla, a quizess és a users táblát kapcsolja össze)
 | Mező          	| Típus   | Leírás                                 	|
@@ -233,23 +235,11 @@ Az adatbázis adattáblái:
 | quiz_id            	| int     |   a kvízek táblából a kvíz azonosítója kerül bele   |
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
 
-
-
-
 **questions** (A kvízekhez tartozó kérdések azonosítók alapján)<br>
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | question            	| varchar     |   egy adott kvízhez tartozó kérdés           |
-
-
-**quiz_questions** (A quizess és a questions táblák kapcsolótáblája)<br>
-| Mező          	| Típus   | Leírás                                 	|
-|-----------------|---------|----------------------------------------	|
-| id            	| int     | azonosító, elsődleges kulcs             |
-| quiz_id           | int     | a quizess tábla azonosítója kerül bele  |
-| question_id       | int     | a kérdés azonosítója kerül bele         |
-
 
 **answers** (A kvízekhre adott válaszok ide kerülnek be)<br>
 | Mező          	| Típus   | Leírás                                 	|
@@ -266,12 +256,12 @@ Az adatbázis adattáblái:
 | answer_id         | int     | a kérdés azonosítója kerül bele         |
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
 
-
-Képernyőkép: 
-![adatbázis terv](https://user-images.githubusercontent.com/114657677/226694409-d9ea720b-d3c9-4c45-97bf-1d289ac59006.png)
-
-
-
+**quiz_users** (Kvíz és users táblákat összekötő tábla)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| bigint     | azonosító, elsődleges kulcs             |
+| quiz_id            	| int     | Kvíz azonosító             |
+| user_id            	| int     | Felhasználó azonosító             |
 
 Implementációs terv
 -------------------
