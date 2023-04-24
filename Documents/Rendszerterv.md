@@ -224,6 +224,8 @@ Az adatbázis adattáblái:
 | title            	| varchar     |   a kvíz címe           |
 | category            	| varchar     |   a kvíz kategóriája           |
 | is_private            	| boolean     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma               |
 
 **quiz_users** (Kapcsolótábla, a quizess és a users táblát kapcsolja össze)
 | Mező          	| Típus   | Leírás                                 	|
@@ -231,6 +233,8 @@ Az adatbázis adattáblái:
 | id            	| int     | azonosító, elsődleges kulcs             |
 | quiz_id            	| int     |   a kvízek táblából a kvíz azonosítója kerül bele   |
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma               |
 
 
 **questions** (A kvízekhez tartozó kérdések azonosítók alapján)<br>
@@ -238,6 +242,8 @@ Az adatbázis adattáblái:
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | question            	| varchar     |   egy adott kvízhez tartozó kérdés           |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma               |
 
 
 **answers** (A kvízekhre adott válaszok ide kerülnek be)<br>
@@ -249,6 +255,8 @@ Az adatbázis adattáblái:
 | answer_3            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
 | answer_4            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
 | correct_answer            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma               |
 
 
 **quiz_question_answers** (Egy kvíz kitöltésekor töltődik fel)<br>
@@ -259,6 +267,8 @@ Az adatbázis adattáblái:
 | question_id       | int     | a kérdés azonosítója kerül bele         |
 | answer_id         | int     | a kérdés azonosítója kerül bele         |
 | user_id            	| int     |   a users táblából a felh. azonosítója kerül bele   |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma              |
 
 
 
