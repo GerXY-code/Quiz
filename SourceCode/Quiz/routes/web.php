@@ -19,6 +19,9 @@ use App\Http\Controllers\QuizController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/quiz/create/', function () {
+    return Inertia::render('Quizzes/CreateQuiz');
+});
 
 Route::get('/quiz/{id}', function (Request $request) {
     $quizId = $request->route('id');
