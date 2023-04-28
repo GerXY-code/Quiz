@@ -6,6 +6,7 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 import { User } from "@/types";
 import ThemeSwitcher from "@/Components/ThemeSwitcher";
+import PrimaryButton from "@/Components/PrimaryButton";
 
 export default function Authenticated({
     user,
@@ -23,7 +24,6 @@ export default function Authenticated({
                 <div className="w-5/6">
                     <div className="flex justify-between h-16">
                         <div className="flex">
-                            
                             <div className="shrink-0 flex w-24 items-center justify-end">
                                 <Link href="/">
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
@@ -47,6 +47,14 @@ export default function Authenticated({
                         </div>
 
                         <div className="hidden sm:flex sm:items-center mr-12">
+                            <div>
+                                <Link
+                                    className="text-gray-900 dark:text-gray-100"
+                                    href={"/quiz/create"}
+                                >
+                                    Create a quiz
+                                </Link>
+                            </div>
                             <div className="ml-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>
