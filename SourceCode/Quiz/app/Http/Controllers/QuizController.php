@@ -54,7 +54,7 @@ class QuizController extends Controller
         $questions = [];
         $title = $queryResult[0]->title;
         $category = $queryResult[0]->category;
-        $cover    = $queryResult[0]->quiz_cover;
+        $cover = empty($queryResult[0]->quiz_cover) ? '' : $queryResult[0]->quiz_cover;
         $is_private = $queryResult[0]->is_private;
         foreach($queryResult as $index) {
             $answers = [];
