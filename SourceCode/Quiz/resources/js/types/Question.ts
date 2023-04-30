@@ -1,7 +1,8 @@
 import { Answer } from "./Answer";
+import { AnswerInput } from "./AnswerInput";
 
 export type Question = {
-    id: number;
+    id?: number;
     question: string;
-    answer: Answer;
+    answers: Answer | AnswerInput[];
 }
