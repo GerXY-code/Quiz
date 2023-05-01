@@ -1,5 +1,5 @@
 import { PageProps } from ".";
-import { Quiz } from "./Quiz";
+import { Quiz } from "../interfaces/Quiz";
 
 export type HomeProps = PageProps & {
     quizzes: Quiz[];

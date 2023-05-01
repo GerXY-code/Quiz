@@ -2,8 +2,8 @@ import Checkbox from "@/Components/Checkbox";
 import { useReducer, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PrimaryButton from "./PrimaryButton";
-import { Question } from "@/types/Question";
-import { AnswerInput } from "@/types/AnswerInput";
+import { CreatedAnswer } from "@/interfaces/CreatedAnswer";
+import { CreatedQuestion } from "@/interfaces/CreatedQuestion";
 
 enum QuestionActionType {
     ADD_ANSWER,
@@ -15,12 +15,15 @@ type QuestionAction =
     | {
           type: QuestionActionType.UPDATE_ANSWER;
           index: number;
-          partialValue: Partial<AnswerInput>;
+          partialValue: Partial<CreatedAnswer>;
       }
-    | { type: QuestionActionType.ADD_ANSWER; answer: AnswerInput }
+    | { type: QuestionActionType.ADD_ANSWER; answer: CreatedAnswer }
     | { type: QuestionActionType.REMOVE_ANSWER; index: number };
 
-function reducer(state: AnswerInput[], action: QuestionAction): AnswerInput[] {
+function reducer(
+    state: CreatedAnswer[],
+    action: QuestionAction
+): CreatedAnswer[] {
     switch (action.type) {
         case QuestionActionType.UPDATE_ANSWER: {
             const { index, partialValue } = action;
@@ -53,10 +56,10 @@ function reducer(state: AnswerInput[], action: QuestionAction): AnswerInput[] {
 export default function AddQuestion({
     saveQuestion,
 }: {
-    saveQuestion: (question: Question) => void;
+    saveQuestion: (question: CreatedQuestion) => void;
 }) {
     const [question, setQuestion] = useState("");
-    const initialState: AnswerInput[] = [
+    const initialState: CreatedAnswer[] = [
         { id: uuidv4(), answer: "", isCorrect: false },
         { id: uuidv4(), answer: "", isCorrect: false },
     ];
@@ -154,7 +157,12 @@ export default function AddQuestion({
                     </button>
                 </div>
                 <PrimaryButton
-                    onClick={() => saveQuestion({ question, answers })}
+                    onClick={() =>
+                        saveQuestion({
+                            question,
+                            answers,
+                        })
+                    }
                 >
                     Save
                 </PrimaryButton>
