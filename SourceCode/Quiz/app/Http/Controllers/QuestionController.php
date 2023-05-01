@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Http\Controllers\QuestionController;
+use App\Models\Question;
 
 class QuestionController extends Controller
 {
     public function createQuestion(Request $request){
-        QuestionController::create([
+        Question::create([
             'question' => $request['question'],
         ]);
     }

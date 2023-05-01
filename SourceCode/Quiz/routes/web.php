@@ -20,21 +20,21 @@ use App\Http\Controllers\QuizController;
 |
 */
 
+Route::get('/quiz/create/', function () {
+    return Inertia::render('Quizzes/CreateQuiz');
+});
+
 Route::get('/quiz/{id}', function (Request $request) {
     $quizId = $request->route('id');
     $quiz = app(QuizController::class)->getById($quizId);
     return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
 });
 
-
-Route::get('/insertquiz', function(Request $request) {
+Route::post('/quiz/create', function(Request $request) {
    
     $result = app(QuizController::class)->createQuiz($request);
 
 });
-
-
-//Route::resource('/answers', AnswerController::class);
 
 Route::get('/', function () {
     return Inertia::render('Auth/Login', [
