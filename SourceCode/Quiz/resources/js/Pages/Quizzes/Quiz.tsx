@@ -2,7 +2,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { QuizProps } from "@/types/QuizProps";
 import { useState } from "react";
-import StartQuiz from "./StartQuiz";
+import StartQuiz from "../../Components/StartQuiz";
 
 export default function Quiz({ auth, quiz }: QuizProps) {
     const [index, setIndex] = useState(0);
@@ -32,9 +32,9 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                                     <div className="grid grid-cols-2">
                                         {quiz.questions[
                                             index
-                                        ].answer.answers.map((ans) => (
+                                        ].answer.answers.map((ans, idx) => (
                                             <PrimaryButton
-                                                key={ans}
+                                                key={ans + idx}
                                                 className="m-1"
                                                 onClick={() => increaseIndex()}
                                             >
