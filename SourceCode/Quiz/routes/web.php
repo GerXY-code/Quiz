@@ -19,6 +19,7 @@ use App\Http\Controllers\QuizController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/quiz/create/', function () {
     return Inertia::render('Quizzes/CreateQuiz');
 });
@@ -29,15 +30,11 @@ Route::get('/quiz/{id}', function (Request $request) {
     return Inertia::render('Quizzes/Quiz', ['quiz' => $quiz]);
 });
 
-
-Route::get('/insertquiz', function(Request $request) {
+Route::post('/quiz/create', function(Request $request) {
    
     $result = app(QuizController::class)->createQuiz($request);
 
 });
-
-
-//Route::resource('/answers', AnswerController::class);
 
 Route::get('/', function () {
     return Inertia::render('Auth/Login', [
