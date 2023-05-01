@@ -1,7 +1,9 @@
 export default function RemoveButton({
     onClick,
+    className,
 }: {
     onClick?: React.MouseEventHandler;
+    className?: string;
 }) {
     return (
         <button onClick={onClick}>
