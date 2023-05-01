@@ -5,6 +5,7 @@ import PrimaryButton from "./PrimaryButton";
 import { CreatedAnswer } from "@/interfaces/CreatedAnswer";
 import { CreatedQuestion } from "@/interfaces/CreatedQuestion";
 import RemoveButton from "./RemoveButton";
+import AddButton from "./AddButton";
 
 enum QuestionActionType {
     ADD_ANSWER,
@@ -44,7 +45,6 @@ function reducer(
         }
         case QuestionActionType.REMOVE_ANSWER: {
             if (state.length > 2) {
-                const { index } = action;
                 const filteredQuestions = state.filter(
                     (q, index) => index !== action.index
                 );
@@ -70,9 +70,7 @@ export default function AddQuestion({
 
     const [answers, dispatch] = useReducer(reducer, initialState);
 
-    function handleAddAnswer(
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) {
+    function handleAddAnswer(e: React.MouseEvent<Element, MouseEvent>) {
         e.preventDefault();
         dispatch({
             type: QuestionActionType.ADD_ANSWER,
@@ -171,12 +169,10 @@ export default function AddQuestion({
                             </div>
                         ))}
                     </div>
-                    <button
-                        className="ml-4 w-6 h-6 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded-full"
+                    <AddButton
+                        className="mb-4 ml-4 w-6 h-6 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded-full"
                         onClick={(e) => handleAddAnswer(e)}
-                    >
-                        +
-                    </button>
+                    />
                 </div>
                 <PrimaryButton onClick={(e) => handleSaveQuestion(e)}>
                     Save
