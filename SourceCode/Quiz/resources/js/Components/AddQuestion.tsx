@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import PrimaryButton from "./PrimaryButton";
 import { CreatedAnswer } from "@/interfaces/CreatedAnswer";
 import { CreatedQuestion } from "@/interfaces/CreatedQuestion";
+import RemoveButton from "./RemoveButton";
 
 enum QuestionActionType {
     ADD_ANSWER,
@@ -44,7 +45,10 @@ function reducer(
         case QuestionActionType.REMOVE_ANSWER: {
             if (state.length > 2) {
                 const { index } = action;
-                return [...state.slice(0, index), ...state.slice(index + 1)];
+                const filteredQuestions = state.filter(
+                    (q, index) => index !== action.index
+                );
+                return filteredQuestions;
             }
             return state;
         }
@@ -76,19 +80,45 @@ export default function AddQuestion({
         });
     }
 
-    function handleRemoveAnswer(
-        e: React.MouseEvent<HTMLButtonElement>,
-        index: number
-    ) {
+    function handleRemoveAnswer(e: React.MouseEvent<Element>, index: number) {
         e.preventDefault();
         dispatch({
             type: QuestionActionType.REMOVE_ANSWER,
             index: index,
         });
     }
+
+    function handleSaveQuestion(e: React.MouseEvent<Element>) {
+        e.preventDefault();
+        if (!isQuestionValid()) {
+            return;
+        }
+        saveQuestion({
+            question,
+            answers,
+        });
+    }
+
+    function isCheckBoxDisabled(idx: number): boolean {
+        const isCorrectCount = answers.filter(
+            (answer) => answer.isCorrect === true
+        ).length;
+        return (
+            isCorrectCount === answers.length - 1 &&
+            answers[idx].isCorrect === false
+        );
+    }
+
+    function isQuestionValid(): boolean {
+        return (
+            question.length > 1 &&
+            answers.filter((answer) => answer.answer.length < 1).length === 0 &&
+            answers.filter((answer) => answer.isCorrect === true).length > 0
+        );
+    }
     return (
         <form className="text-gray-900 dark:text-gray-100">
-            <div className="p-6 flex flex-col items-center mt-12 bg-white dark:bg-gray-800">
+            <div className="p-6 flex flex-col items-center justify-center mt-12 bg-white dark:bg-gray-800">
                 <div>
                     <input
                         onChange={(e) => setQuestion(e.target.value)}
@@ -100,53 +130,45 @@ export default function AddQuestion({
                 <div className="p-4 w-full flex justify-center items-center">
                     <div className="flex flex-row">
                         {answers.map((answer, idx) => (
-                            <>
-                                <input
-                                    key={answer.id}
-                                    className="w-64 h-48 m-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800"
-                                    onChange={(e) => {
-                                        dispatch({
-                                            type: QuestionActionType.UPDATE_ANSWER,
-                                            index: idx,
-                                            partialValue: {
-                                                answer: e.target.value,
-                                            },
-                                        });
-                                    }}
-                                    placeholder="Type an answer here..."
-                                ></input>
-                                <Checkbox
-                                    key={answer.id + "checkbox"}
-                                    className="w-5 h-5 -ml-7 mt-2"
-                                    onChange={(e) => {
-                                        dispatch({
-                                            type: QuestionActionType.UPDATE_ANSWER,
-                                            index: idx,
-                                            partialValue: {
-                                                isCorrect: e.target.checked,
-                                            },
-                                        });
-                                    }}
-                                ></Checkbox>
-                                <button
-                                    onClick={(e) => handleRemoveAnswer(e, idx)}
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
-                                        />
-                                    </svg>
-                                </button>
-                            </>
+                            <div className="flex flex-col">
+                                <div>
+                                    <input
+                                        key={answer.id}
+                                        className="w-64 h-48 m-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800"
+                                        onChange={(e) => {
+                                            dispatch({
+                                                type: QuestionActionType.UPDATE_ANSWER,
+                                                index: idx,
+                                                partialValue: {
+                                                    answer: e.target.value,
+                                                },
+                                            });
+                                        }}
+                                        placeholder="Type an answer here..."
+                                    ></input>
+                                    <Checkbox
+                                        key={answer.id + "checkbox"}
+                                        className="w-5 h-5"
+                                        disabled={isCheckBoxDisabled(idx)}
+                                        onChange={(e) => {
+                                            dispatch({
+                                                type: QuestionActionType.UPDATE_ANSWER,
+                                                index: idx,
+                                                partialValue: {
+                                                    isCorrect: e.target.checked,
+                                                },
+                                            });
+                                        }}
+                                    ></Checkbox>
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <RemoveButton
+                                        onClick={(e) =>
+                                            handleRemoveAnswer(e, idx)
+                                        }
+                                    ></RemoveButton>
+                                </div>
+                            </div>
                         ))}
                     </div>
                     <button
@@ -156,14 +178,7 @@ export default function AddQuestion({
                         +
                     </button>
                 </div>
-                <PrimaryButton
-                    onClick={() =>
-                        saveQuestion({
-                            question,
-                            answers,
-                        })
-                    }
-                >
+                <PrimaryButton onClick={(e) => handleSaveQuestion(e)}>
                     Save
                 </PrimaryButton>
             </div>
