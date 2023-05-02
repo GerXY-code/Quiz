@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('quizzes', function(Blueprint $table){
                 $table->id();
                 $table->string('title');
-                $table->string('category');
                 $table->string('quiz_cover');
                 $table->boolean('is_private');
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
