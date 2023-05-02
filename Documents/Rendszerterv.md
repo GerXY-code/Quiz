@@ -217,12 +217,11 @@ Az adatbázis adattáblái:
 | exception            | longtext | kivétel                          |
 | failed_at            | timestamp | sikertelenség ideje                          |
 
-**quizess** (A kvízek ebben a táblában kerülnek eltárolásra)
+**quizzes** (A kvízek ebben a táblában kerülnek eltárolásra)
 | Mező          	| Típus   | Leírás                                 	|
 |-----------------|---------|----------------------------------------	|
 | id            	| int     | azonosító, elsődleges kulcs             |
 | title            	| varchar     |   a kvíz címe           |
-| category            	| varchar     |   a kvíz kategóriája           |
 | is_private            	| boolean     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
 | created_at 	| timestamp 	| létrehozása dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma               |
@@ -254,7 +253,10 @@ Az adatbázis adattáblái:
 | answer_2            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
 | answer_3            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
 | answer_4            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó 4.ik válaszlehetőség     |
-| correct_answer            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+| correct_answer_1            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+| correct_answer_2            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+| correct_answer_3            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
+| correct_answer_4            	| varchar     |   egy adott kvíz adott kérdéséhez tartozó helyes válasz     |
 | created_at 	| timestamp 	| létrehozása dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma               |
 
@@ -270,9 +272,22 @@ Az adatbázis adattáblái:
 | created_at 	| timestamp 	| létrehozása dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma              |
 
+**Passcode** (Privát kvízekhez tárol jelszót)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| Passcode            	| varchar     | Kvíz jelszó             |
+| Quiz_ID            	| int     | Kvízhez tartozót ID             |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma              |
 
-
-
+**Category** (Kategóriákat tároló tábla)<br>
+| Mező          	| Típus   | Leírás                                 	|
+|-----------------|---------|----------------------------------------	|
+| id            	| int     | azonosító, elsődleges kulcs             |
+| Category            	| varchar     | Kategória tároló             |
+| created_at 	| timestamp 	| létrehozása dátuma              |
+| update_at 	| timestamp 	| frissítés dátuma              |
 
 Implementációs terv
 -------------------
