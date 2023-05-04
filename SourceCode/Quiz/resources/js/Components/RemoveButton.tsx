@@ -6,7 +6,7 @@ export default function RemoveButton({
     className?: string;
 }) {
     return (
-        <button onClick={onClick}>
+        <button className={className} onClick={onClick}>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
