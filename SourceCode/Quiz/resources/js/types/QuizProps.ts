@@ -1,6 +1,6 @@
+import { QuizResponse } from "@/interfaces/response/QuizResponse";
 import { PageProps } from ".";
-import { Quiz } from "../interfaces/Quiz";
 
 export type QuizProps = PageProps & {
-    quiz: Quiz;
+    quiz: QuizResponse;
 };
