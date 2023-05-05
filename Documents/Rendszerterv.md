@@ -225,12 +225,9 @@ Az adatbázis adattáblái:
 | title            	| varchar     |   a kvíz címe           |
 | category            	| varchar     |   a kvíz kategóriája           |
 | is_private            	| boolean     |   azt mutatja meg, hogy a kvíz publikus vagy privát   |
-<<<<<<< Updated upstream
-=======
 | time_limit            	| int     |   időzítő a kérdések kitöltéséhez   |
 | created_at 	| timestamp 	| létrehozása dátuma              |
 | update_at 	| timestamp 	| frissítés dátuma               |
->>>>>>> Stashed changes
 
 **quiz_users** (Kapcsolótábla, a quizess és a users táblát kapcsolja össze)
 | Mező          	| Típus   | Leírás                                 	|
