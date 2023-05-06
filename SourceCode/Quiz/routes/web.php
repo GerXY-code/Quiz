@@ -21,7 +21,7 @@ use App\Http\Controllers\QuizController;
 */
 
 Route::get('/quiz/create/', function () {
-    return Inertia::render('Quizzes/CreateQuiz');
+    return Inertia::render('Quizzes/QuizEditor');
 });
 
 Route::get('/quiz/{id}', function (Request $request) {
