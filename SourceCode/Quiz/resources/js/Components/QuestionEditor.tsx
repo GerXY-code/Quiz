@@ -102,7 +102,7 @@ export default function QuestionEditor({
             return;
         }
         onSaveClick!({
-            id: uuidv4(),
+            id: previousQuestionState?.id ?? uuidv4(),
             question,
             answers,
         });
