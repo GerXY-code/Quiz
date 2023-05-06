@@ -1,13 +1,15 @@
 import Dropdown from "./Dropdown";
 
-export default function CategorySelector({
-    categories,
+export default function SelectDropdown({
+    values,
     onSelect,
-    selectedCategory,
+    selectedValue,
+    placeholder,
 }: {
-    categories: string[];
-    onSelect: (category: string) => void;
-    selectedCategory: string;
+    values: string[];
+    onSelect: (value: string) => void;
+    selectedValue: string;
+    placeholder?: string;
 }) {
     return (
         <Dropdown>
@@ -19,9 +21,7 @@ export default function CategorySelector({
                         font-medium rounded-md text-gray-200 dark:text-gray-800 bg-gray-800 dark:bg-gray-200
                         hover:text-gray-300 dark:hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                     >
-                        {selectedCategory.length < 1
-                            ? "Select a category"
-                            : selectedCategory}
+                        {selectedValue.length < 1 ? placeholder : selectedValue}
                         <svg
                             className="ml-2 -mr-0.5 h-4 w-4"
                             xmlns="http://www.w3.org/2000/svg"
@@ -38,14 +38,14 @@ export default function CategorySelector({
                 </span>
             </Dropdown.Trigger>
             <Dropdown.Content>
-                {categories.map((category) => {
+                {values.map((value) => {
                     return (
                         <button
-                            key={category}
-                            onClick={() => onSelect(category)}
+                            key={value}
+                            onClick={() => onSelect(value)}
                             className="pt-1 pb-1 block w-full hover:bg-gray-800 dark:hover:bg-gray-200 hover:text-gray-200 dark:hover:text-gray-800"
                         >
-                            {category}
+                            {value}
                         </button>
                     );
                 })}
