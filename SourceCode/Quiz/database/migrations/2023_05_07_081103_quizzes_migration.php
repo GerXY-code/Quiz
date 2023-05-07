@@ -16,6 +16,8 @@ return new class extends Migration
                 $table->string('title');
                 $table->string('quiz_cover');
                 $table->boolean('is_private');
+                $table->unsignedBigInteger('category_id');
+                $table->foreign('category_id')->references('id')->on('categories');
                 $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
                 $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
