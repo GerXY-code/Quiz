@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Passcode', function (Blueprint $table) {
+        Schema::create('passcode', function (Blueprint $table) {
             $table->id();
-            $table->string('Passcode');
-            $table->string('Quiz_ID');
+            $table->string('passcode');
+            $table->string('quiz_ID');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('passcode');
     }
 };
