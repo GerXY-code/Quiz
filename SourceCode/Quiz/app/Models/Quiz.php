@@ -12,9 +12,9 @@ class Quiz extends Model
 
     protected $fillable = [
             'title',
-            'category',
             'quiz_cover',
-            'is_private'
+            'is_private',
+            'category_id'
     ];
 
     public function category(): BelongsTo {
