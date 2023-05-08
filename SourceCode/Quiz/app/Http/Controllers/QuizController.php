@@ -7,6 +7,7 @@ use \App\DTO\QuestionDTO;
 use \App\DTO\QuizDTO;
 use \App\Models\QuizQuestionAnswers;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 class QuizController extends Controller
 {
@@ -27,15 +28,17 @@ class QuizController extends Controller
         return $this->mapToQuizDTO($queryResult);        
     }
     
-    public function getAll(){
-        $queryResult = 
-        QuizQuestionAnswers::select('qz.id','qz.title','qz.category','qz.quiz_cover')
-            ->join('questions as q', 'q.id', '=', 'quiz_question_answers.question_id')
-            ->join('answers as a', 'a.id', '=', 'quiz_question_answers.answer_id')
-            ->join('quizzes as qz', 'qz.id', '=', 'quiz_question_answers.quiz_id')
-            ->distinct()
-            ->get();
-        return $queryResult;
+    public function getAll($request){
+        $queryResult = Quiz::with('category');
+        $page = $request->has('page') ? $request->get('page') : 1;
+        $limit = $request->has('limit') ? $request->get('limit') : 10;
+        if ($request->has('category')) {
+            $category = $request->get('category');
+            $queryResult = $queryResult->whereHas('category', function ($q) use ($category) {
+                $q->where('category', $category);
+            });
+        }
+        return $queryResult->limit($limit)->offset(($page - 1) * $limit)->get();
     }
 
     public function createQuiz(Request $request){
@@ -45,9 +48,6 @@ class QuizController extends Controller
                 'quiz_cover' => $request['quiz_cover'],
                 'is_private' => $request['is_private']
         ]);
-        
-    
-
     }
 
     private function mapToQuizDTO($queryResult) {
@@ -75,7 +75,4 @@ class QuizController extends Controller
         return $quizDTO;
     }
 
-        
-    
-  
 }
