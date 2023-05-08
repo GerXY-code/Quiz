@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use App\Helpers\DBHelper;
 
 class QuizSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class QuizSeeder extends Seeder
     {
         DB::table('quizzes')->insert([
             'title' => Str::random(10),
-            'category' => Str::random(10),
+            'category_id' => DBHelper::getRandomId('categories', 'id'),
             'is_private' => 0,
             'quiz_cover' => Str::random(10)
         ]);
