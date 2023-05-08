@@ -16,9 +16,9 @@ class QuizSeeder extends Seeder
     {
         DB::table('quizzes')->insert([
             'title' => Str::random(10),
-            'category' => Str::random(10),
             'is_private' => 0,
-            'quiz_cover' => Str::random(10)
+            'quiz_cover' => Str::random(10),
+            'time_limit' => 30
         ]);
     }
 }
