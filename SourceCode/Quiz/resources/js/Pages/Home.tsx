@@ -1,14 +1,28 @@
+import SelectDropdown from "@/Components/SelectDropdown";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { HomeProps } from "@/types/HomeProps";
-import { Link } from "@inertiajs/react";
+import { Link, router } from "@inertiajs/react";
 
-export default function Home({ auth, quizzes }: HomeProps) {
+export default function Home({ auth, quizzes, categories }: HomeProps) {
+    function handleOnCategorySelect(value: string) {
+        if (!categories.find((c) => c.category === value)) return;
+        router.get(`/?category=${value}`);
+    }
+    console.log(quizzes);
     return (
         <AuthenticatedLayout user={auth.user}>
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg">
                         <div className="p-5 text-gray-900 dark:text-gray-100 flex justify-center">
+                            <div className="ml-12 mt-12">
+                                <SelectDropdown
+                                    values={categories.map((c) => c.category)}
+                                    onSelect={handleOnCategorySelect}
+                                    selectedValue={""}
+                                    placeholder="Filter by category"
+                                />
+                            </div>
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
                                 {quizzes.map((quiz) => (
                                     <Link
