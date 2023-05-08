@@ -2,13 +2,19 @@ import SelectDropdown from "@/Components/SelectDropdown";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { HomeProps } from "@/types/HomeProps";
 import { Link, router } from "@inertiajs/react";
+import { useEffect } from "react";
+
+const noCategorySelectedValue = "None";
 
 export default function Home({ auth, quizzes, categories }: HomeProps) {
+    categories = [{ id: -1, category: noCategorySelectedValue }, ...categories];
+
     function handleOnCategorySelect(value: string) {
         if (!categories.find((c) => c.category === value)) return;
-        router.get(`/?category=${value}`);
+        router.get(
+            value == noCategorySelectedValue ? `/` : `/?category=${value}`
+        );
     }
-    console.log(quizzes);
     return (
         <AuthenticatedLayout user={auth.user}>
             <div className="py-12">
