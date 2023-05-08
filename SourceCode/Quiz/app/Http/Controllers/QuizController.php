@@ -67,6 +67,7 @@ class QuizController extends Controller
         $is_private = $queryResult[0]->is_private;
         foreach($queryResult as $index) {
             $answers = [];
+            $correct_answers = [];
             if (isset($index->answer_1) && strlen($index->answer_1)>0)
                 array_push($answers, $index->answer_1);
             if (isset($index->answer_2) && strlen($index->answer_2)>0)
@@ -75,12 +76,21 @@ class QuizController extends Controller
                 array_push($answers, $index->answer_3);
             if (isset($index->answer_4) && strlen($index->answer_4)>0)
                 array_push($answers, $index->answer_4);
-            $answer = new AnswerDTO($answers, $index->correct_answer);
+
+            if (isset($index->correct_answer_1) && strlen($index->correct_answer_1)>0)
+                array_push($correct_answers, $index->correct_answers_answer_1);
+            if (isset($index->correct_aanswer_2) && strlen($index->correct_answer_2)>0)
+                array_push($correct_answers, $index->correct_answers_answer_2);
+            if (isset($index->correct_answer_3) && strlen($index->correct_answer_3)>0)
+                array_push($correct_answers, $index->correct_answers_answer_3);
+            if (isset($index->correct_answer_4) && strlen($index->correct_answer_4)>0)
+                array_push($correct_answers, $index->correct_answers_answer_4);
+            $answer = new AnswerDTO($answers, $correct_answers);
             $question = new QuestionDTO($index->question_id, $index->question, $answer);
             array_push($questions, $question);
         }
 
-        $quizDTO = new QuizDTO($title, $category, $cover, $questions, $is_private);
+        $quizDTO = new QuizDTO($title, /*$cover*/ $questions, $is_private);
         return $quizDTO;
     }
 
