@@ -1,12 +1,10 @@
 import { useState, PropsWithChildren, ReactNode } from "react";
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Dropdown from "@/Components/Dropdown";
-import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/react";
 import { User } from "@/types";
 import ThemeSwitcher from "@/Components/ThemeSwitcher";
-import PrimaryButton from "@/Components/PrimaryButton";
 
 export default function Authenticated({
     user,
@@ -28,21 +26,6 @@ export default function Authenticated({
                                 <Link href="/">
                                     <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                                 </Link>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink
-                                    href={"/quiz"}
-                                    active={route().current("quiz")}
-                                >
-                                    Quiz
-                                </NavLink>
-                                <NavLink href={"test1"} active={false}>
-                                    test1
-                                </NavLink>
-                                <NavLink href={"test2"} active={false}>
-                                    test2
-                                </NavLink>
                             </div>
                         </div>
 
