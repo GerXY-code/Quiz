@@ -16,7 +16,7 @@ export default function Authenticated({
     return (
         <div className="min-h-screen bg-sky-100 dark:bg-sky-950">
             <nav className="flex items-center bg-blue-300 dark:bg-gray-800 border-b border-blue-300 dark:border-gray-700">
-                <div className="w-1/6">
+                <div className="w-1/3">
                     <ThemeSwitcher />
                 </div>
                 <div className="w-5/6">
