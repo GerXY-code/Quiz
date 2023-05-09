@@ -158,8 +158,8 @@ export default function QuestionEditor({
                                                 <input
                                                     key={answer.id}
                                                     value={answer.answer}
-                                                    className="w-64 h-48 m-2 text-center bg-gray-800 text-white 
-                                                    dark:bg-gradient-to-br dark:from-amber-700 dark:to-yellow-600"
+                                                    className="w-64 h-48 m-2 text-gray-500 text-center font-bold text-lg rounded-2xl border-double border-2 border-sky-300 bg-gray-800 
+                                                    dark:bg-gradient-to-br dark:from-amber-700 dark:to-yellow-600 dark:text-red-800"
                                                     onChange={(e) => {
                                                         dispatch({
                                                             type: QuestionActionType.UPDATE_ANSWER,
