@@ -51,24 +51,26 @@ class QuizController extends Controller
 
        $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
        
+
+
+
        $answers = [null,null,null,null];
        $correct_answers = [null,null,null,null];
 
-       for($i = 0; $i<count($request['questions'][0])-1; $i++){
-            $answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
-       }
-       for($i = 0; $i<count($request['questions'][0])-1; $i++){
-            if($request['questions'][0]['answers'][$i]['isCorrect']){
-                $correct_answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
+
+
+        $counter = 0;
+        while($counter < count($request['questions'])-1){
+            for($i = 0; $i<count($request['questions'][$counter])-1; $i++){
+                $answers[$i] = $request['questions'][$counter]['answers'][$i]['answer'];
+
             }
-       }
-
-
-     
-
-
-
-        DB::table('answers')->insert([
+            for($i = 0; $i<count($request['questions'][$counter])-1; $i++){
+                if($request['questions'][$counter]['answers'][$i]['isCorrect']){
+                    $correct_answers[$i] = $request['questions'][$counter]['answers'][$i]['answer'];
+                }
+           }
+            DB::table('answers')->insert([
                 'answer_1'         =>  $answers[0],
                 'answer_2'         =>  $answers[1],
                 'answer_3'         =>  $answers[2],
@@ -78,10 +80,20 @@ class QuizController extends Controller
                 'correct_answer_3' =>  $correct_answers[2],  
                 'correct_answer_4' =>  $correct_answers[3],  
 
-       ]); 
+            ]); 
+
+            $answers = [null,null,null,null];
+            $correct_answers = [null,null,null,null];
+
+            $counter++;
+        }
+
+    
+
+       
        
 
-       /*Quiz::create([
+      /* Quiz::create([
                 'title'       => $request['title'],
                 'quiz_cover'  => $request['quiz_cover'],
                 'is_private'  => $request['isPrivate'],
