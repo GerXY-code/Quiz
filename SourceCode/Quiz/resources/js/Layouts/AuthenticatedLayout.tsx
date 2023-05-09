@@ -14,7 +14,7 @@ export default function Authenticated({
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen bg-gray-100 dark:bg-sky-950">
             <nav className="flex items-center bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
                 <div className="w-1/6">
                     <ThemeSwitcher />
@@ -24,7 +24,7 @@ export default function Authenticated({
                         <div className="flex">
                             <div className="shrink-0 flex w-24 items-center justify-end">
                                 <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                                    <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800 dark:text-blue-400" />
                                 </Link>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export default function Authenticated({
                         <div className="hidden sm:flex sm:items-center mr-12">
                             <div>
                                 <Link
-                                    className="text-gray-900 dark:text-gray-100"
+                                    className="text-gray-900 dark:text-orange-300"
                                     href={"/quiz/create"}
                                 >
                                     Create a quiz
@@ -44,7 +44,7 @@ export default function Authenticated({
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-900 bg-white dark:bg-yellow-600 hover:text-gray-700 dark:hover:text-blue-200 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {user.name}
 
@@ -158,7 +158,7 @@ export default function Authenticated({
             </nav>
 
             {header && (
-                <header className="bg-white dark:bg-gray-800 shadow">
+                <header className="bg-white dark:bg-sky-950 shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {header}
                     </div>
