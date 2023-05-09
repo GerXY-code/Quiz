@@ -5,7 +5,7 @@ export default function ThemeSwitcher() {
     return (
         <div>
             <div
-                className="rounded-full hover:cursor-pointer dark:hover:bg-gray-800/50 hover:bg-white/50 p-4"
+                className="rounded-full hover:cursor-pointer p-4"
                 onClick={() => setIsToggled(!isToggled)}
             >
                 {isToggled ? (
