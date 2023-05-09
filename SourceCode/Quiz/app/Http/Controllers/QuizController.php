@@ -51,20 +51,33 @@ class QuizController extends Controller
 
        $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
        
-       $answer = [];
-                  
-       $answer[0] = $request['questions'][0]['answers'][0]['answer'];
-       $answer[1] = $request['questions'][0]['answers'][1]['answer'];
-       $answer[2] = $request['questions'][0]['answers'][2]['answer'];
-       $answer[3] = $request['questions'][0]['answers'][3]['answer'];
+       $answers = [null,null,null,null];
+       $correct_answers = [null,null,null,null];
+
+       for($i = 0; $i<count($request['questions'][0])-1; $i++){
+            $answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
+       }
+       for($i = 0; $i<count($request['questions'][0])-1; $i++){
+            if($request['questions'][0]['answers'][$i]['isCorrect']){
+                $correct_answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
+            }
+       }
+
+
+     
 
 
 
         DB::table('answers')->insert([
-            'answer_1'       =>   $answer[0],
-            'answer_2'       =>   $answer[1],
-            'answer_3'       =>   $answer[2],
-            'answer_4'       =>   $answer[3],
+                'answer_1'         =>  $answers[0],
+                'answer_2'         =>  $answers[1],
+                'answer_3'         =>  $answers[2],
+                'answer_4'         =>  $answers[3],
+                'correct_answer_1' =>  $correct_answers[0],  
+                'correct_answer_2' =>  $correct_answers[1],  
+                'correct_answer_3' =>  $correct_answers[2],  
+                'correct_answer_4' =>  $correct_answers[3],  
+
        ]); 
        
 
