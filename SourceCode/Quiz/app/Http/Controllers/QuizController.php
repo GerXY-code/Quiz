@@ -50,13 +50,30 @@ class QuizController extends Controller
     public function createQuiz(Request $request){
 
        $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
+       
+       $answer = [];
+                  
+       $answer[0] = $request['questions'][0]['answers'][0]['answer'];
+       $answer[1] = $request['questions'][0]['answers'][1]['answer'];
+       $answer[2] = $request['questions'][0]['answers'][2]['answer'];
+       $answer[3] = $request['questions'][0]['answers'][3]['answer'];
 
-       Quiz::create([
+
+
+        DB::table('answers')->insert([
+            'answer_1'       =>   $answer[0],
+            'answer_2'       =>   $answer[1],
+            'answer_3'       =>   $answer[2],
+            'answer_4'       =>   $answer[3],
+       ]); 
+       
+
+       /*Quiz::create([
                 'title'       => $request['title'],
                 'quiz_cover'  => $request['quiz_cover'],
                 'is_private'  => $request['isPrivate'],
                 'category_id' => $getChosenCategory->id,
-        ]);
+        ]);*/
     }
 
     private function mapToQuizDTO($queryResult) {
