@@ -34,9 +34,9 @@ export default function Home({ auth, quizzes, categories }: HomeProps) {
                                     <Link
                                         key={quiz.id}
                                         href={`/quiz/${quiz.id}`}
-                                        className="m-5 w-56 h-40  flex justify-center items-end px-4 py-10 bg-gradient-to-br from-orange-300 to-amber-300 shadow-2xl 
-                                        dark:bg-[url('/public/uploads/kartyaStilus.png')] dark:bg-cover dark:bg-center
-                                        border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest
+                                        className="m-5 w-56 h-40  flex justify-center items-end px-4 py-10  bg-[url('/public/uploads/kartyaStilusLight.png')] shadow-2xl 
+                                        dark:bg-[url('/public/uploads/kartyaStilus.png')] bg-cover bg-center
+                                        border border-transparent rounded-md font-bold text-xs text-black dark:text-gray-800 uppercase tracking-widest
                                         hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300
                                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
                                     >
