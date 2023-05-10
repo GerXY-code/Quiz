@@ -141,8 +141,8 @@ export default function QuestionEditor({
                                 <input
                                     value={question}
                                     onChange={(e) => setQuestion(e.target.value)}
-                                    className="w-[48rem] text-center font-bold text-lg rounded-2xl border-double border-2 border-sky-300 h-48 bg-gray-200 
-                                    dark:bg-blue-900"
+                                    className="w-[48rem] text-center font-bold text-lg rounded-2xl dark:border-blue-900 hover:border-double hover:border-2 hover:border-sky-300 h-48 bg-gray-200 
+                                    dark:bg-blue-900 dark:focus:bg-blue-950 dark:hover:border-sky-300"
                                     type="text"
                                     placeholder="Type your question here..."
                                 ></input>
@@ -151,15 +151,15 @@ export default function QuestionEditor({
                                 <div className="flex flex-row">
                                     {answers.map((answer, idx) => (
                                         <div
-                                            className="flex flex-col"
+                                            className="flex flex-col bg-amber-500 rounded-2xl ml-4"
                                             key={answer.id + "outer-div"}
                                         >
                                             <div key={answer.id + "inner-div"}>
                                                 <input
                                                     key={answer.id}
                                                     value={answer.answer}
-                                                    className="w-64 h-48 m-2 text-gray-500 text-center font-bold text-lg rounded-2xl border-double border-2 border-sky-300 bg-gray-800 
-                                                    dark:bg-gradient-to-br dark:from-amber-700 dark:to-yellow-600 dark:text-red-800"
+                                                    className="w-40 h-48 m-2 text-gray-500 text-center font-bold text-lg rounded-2xl focus:border-double focus:border-2 focus:border-sky-300 bg-gray-800 
+                                                    dark:bg-amber-500 dark:focus:bg-amber-800 dark:text-black"
                                                     onChange={(e) => {
                                                         dispatch({
                                                             type: QuestionActionType.UPDATE_ANSWER,
@@ -177,7 +177,7 @@ export default function QuestionEditor({
                                                 <Checkbox
                                                     checked={answer.isCorrect}
                                                     key={answer.id + "checkbox"}
-                                                    className="w-5 h-5"
+                                                    className="w-5 h-5 flex items-center justify-center ml-36"
                                                     disabled={isCheckBoxDisabled(
                                                         idx
                                                     )}
@@ -194,7 +194,7 @@ export default function QuestionEditor({
                                                     }}
                                                 ></Checkbox>
                                             </div>
-                                            <div className="flex items-center justify-center">
+                                            <div className="flex items-center justify-center mb-4">
                                                 <RemoveButton
                                                     key={answer.id + "remove"}
                                                     onClick={(e) =>
