@@ -35,13 +35,21 @@ class QuizController extends Controller
         $queryResult = Quiz::with('category');
         $page = $request->has('page') ? $request->get('page') : self::DEFAULT_PAGE;
         $limit = $request->has('limit') ? $request->get('limit') : self::DEFAULT_LIMIT;
+
         if ($request->has('category')) {
             $category = $request->get('category');
             $queryResult = $queryResult->whereHas('category', function ($q) use ($category) {
                 $q->where('category', $category);
             });
         }
-        return $queryResult->limit($limit)->offset(($page - 1) * $limit)->get();
+
+        $totalPages = ceil($queryResult->count() / $limit);
+        $queryResult = $queryResult->limit($limit)->offset(($page - 1) * $limit)->get();
+
+        return [
+            'quizzes' => $queryResult,
+            'totalPages' => $totalPages,
+        ];
     }
 
    
