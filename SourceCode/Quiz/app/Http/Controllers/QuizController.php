@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 use \App\Models\Quiz;
-use \App\Models\Category;
 use \App\DTO\AnswerDTO;
 use \App\DTO\QuestionDTO;
 use \App\DTO\QuizDTO;
 use \App\Models\QuizQuestionAnswers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 
 class QuizController extends Controller
 {
 
+    private const DEFAULT_LIMIT = 12;
+    private const DEFAULT_PAGE = 1;
     
     public function getById($quizId){
         $queryResult = 
@@ -34,8 +33,8 @@ class QuizController extends Controller
     
     public function getAll($request){
         $queryResult = Quiz::with('category');
-        $page = $request->has('page') ? $request->get('page') : 1;
-        $limit = $request->has('limit') ? $request->get('limit') : 10;
+        $page = $request->has('page') ? $request->get('page') : self::DEFAULT_PAGE;
+        $limit = $request->has('limit') ? $request->get('limit') : self::DEFAULT_LIMIT;
         if ($request->has('category')) {
             $category = $request->get('category');
             $queryResult = $queryResult->whereHas('category', function ($q) use ($category) {
@@ -51,13 +50,8 @@ class QuizController extends Controller
 
        $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
        
-
-
-
        $answers = [null,null,null,null];
        $correct_answers = [null,null,null,null];
-
-
 
         $counter = 0;
         while($counter < count($request['questions'])-1){
@@ -88,17 +82,6 @@ class QuizController extends Controller
             $counter++;
         }
 
-    
-
-       
-       
-
-      /* Quiz::create([
-                'title'       => $request['title'],
-                'quiz_cover'  => $request['quiz_cover'],
-                'is_private'  => $request['isPrivate'],
-                'category_id' => $getChosenCategory->id,
-        ]);*/
     }
 
     private function mapToQuizDTO($queryResult) {
