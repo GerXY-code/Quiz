@@ -4,22 +4,26 @@ import { Quiz } from "@/interfaces/Quiz";
 import { HomeProps } from "@/types/HomeProps";
 import { Link } from "@inertiajs/react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const noCategorySelectedValue = "None";
+const quizzesUrl = "/quizzes";
+
 type QueryParams = {
     page: number;
+    limit?: number;
     category?: string;
 };
 
 export default function Home({ auth, categories }: HomeProps) {
     categories = [{ id: -1, category: noCategorySelectedValue }, ...categories];
 
-    const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+    const [quizzes, setQuizzes] = useState<Quiz[] | undefined>(undefined);
     const [selectedCategory, setSelectedCategory] = useState(
         noCategorySelectedValue
     );
     const [currentPage, setCurrentPage] = useState(1);
+    const totalPagesRef = useRef<number | undefined>(undefined);
 
     function getQuizzes(
         handleSetQuizzes: (newQuizzes: Quiz[]) => void,
@@ -29,9 +33,12 @@ export default function Home({ auth, categories }: HomeProps) {
             let queryParams: QueryParams = { page: currentPage };
             if (selectedCategory !== noCategorySelectedValue)
                 queryParams = { ...queryParams, category: selectedCategory };
-            const result = await axios.get("/quizzes", { params: queryParams });
+            const result = await axios.get(quizzesUrl, {
+                params: queryParams,
+            });
             if (!ignore) {
-                handleSetQuizzes(result.data);
+                totalPagesRef.current = result.data.totalPages;
+                handleSetQuizzes(result.data.quizzes);
             }
         }
 
@@ -41,9 +48,13 @@ export default function Home({ auth, categories }: HomeProps) {
 
     useEffect(() => {
         let ignore = false;
-        getQuizzes((newQuizzes: Quiz[]) => {
-            setQuizzes((previous) => [...previous, ...newQuizzes]);
-        }, ignore);
+        if (totalPagesRef.current && currentPage <= totalPagesRef.current) {
+            getQuizzes((newQuizzes: Quiz[]) => {
+                setQuizzes((previous) =>
+                    previous ? [...previous, ...newQuizzes] : [...newQuizzes]
+                );
+            }, ignore);
+        }
         return () => {
             ignore = true;
         };
@@ -86,23 +97,33 @@ export default function Home({ auth, categories }: HomeProps) {
                                     placeholder="Filter by category"
                                 />
                             </div>
-                            <div
-                                className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 h-128 overflow-scroll"
-                                onScroll={handleScroll}
-                            >
-                                {quizzes.map((quiz) => (
-                                    <Link
-                                        key={quiz.id}
-                                        href={`/quiz/${quiz.id}`}
-                                        className="w-56 h-40 my-3 mx-auto flex justify-center items-center bg-gray-800 dark:bg-gray-200
+                            <div className="flex items-center justify-center">
+                                {quizzes && quizzes.length < 1 && (
+                                    <h1 className="text-xl">
+                                        There are currently no quizzes available
+                                        in this category.
+                                    </h1>
+                                )}
+                            </div>
+                            {quizzes && (
+                                <div
+                                    className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 h-128 overflow-scroll"
+                                    onScroll={handleScroll}
+                                >
+                                    {quizzes.map((quiz) => (
+                                        <Link
+                                            key={quiz.id}
+                                            href={`/quiz/${quiz.id}`}
+                                            className="w-56 h-40 my-3 mx-auto flex justify-center items-center bg-gray-800 dark:bg-gray-200
                                         border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest
                                         hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300
                                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
-                                    >
-                                        {quiz.title}
-                                    </Link>
-                                ))}
-                            </div>
+                                        >
+                                            {quiz.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
