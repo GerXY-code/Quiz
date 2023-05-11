@@ -46,13 +46,16 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/quizzes', function (Request $request) {
+    $quizzes = app(QuizController::class)->getAll($request);
+    return $quizzes;
+})->middleware(['auth', 'verified'])->name('home');
+
 Route::get('/', function (Request $request) {
     
-    $quizzes = app(QuizController::class)->getAll($request);
     $categories = app(CategoryController::class)->index();
 
     return Inertia::render('Home', [
-        'quizzes' => $quizzes,
         'categories' => $categories
     ]);
 })->middleware(['auth', 'verified'])->name('home');
