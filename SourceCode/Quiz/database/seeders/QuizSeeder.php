@@ -18,7 +18,8 @@ class QuizSeeder extends Seeder
             'title' => Str::random(10),
             'category_id' => DBHelper::getRandomId('categories', 'id'),
             'is_private' => 0,
-            'quiz_cover' => Str::random(10)
+            'quiz_cover' => Str::random(10),
+            'time_limit' => 30
         ]);
     }
 }

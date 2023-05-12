@@ -16,9 +16,14 @@ class AnswerSeeder extends Seeder
         $answers = [];
         for ($i = 1; $i <= 4; $i++) {
             $answers["answer_{$i}"] = Str::random(10);
+            $correct_index = mt_rand(1,4);
+            $answers["correct_answer_{$i}"] = $answers["answer_{$correct_index}"];
         }
-        $correct_index = mt_rand(1,4);
-        $answers["correct_answer_1"] = $answers["answer_{$correct_index}"];
+
+        
+
+       
         DB::table('answers')->insert($answers);
+
     }
 }
