@@ -5,8 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
-use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\CategoryController;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 
 /*
@@ -45,10 +46,17 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/', function () {
-    $quizzes = app(QuizController::class)->getAll();
+Route::get('/quizzes', function (Request $request) {
+    $quizzes = app(QuizController::class)->getAll($request);
+    return $quizzes;
+})->middleware(['auth', 'verified'])->name('home');
+
+Route::get('/', function (Request $request) {
+    
+    $categories = app(CategoryController::class)->index();
+
     return Inertia::render('Home', [
-        'quizzes' => $quizzes
+        'categories' => $categories
     ]);
 })->middleware(['auth', 'verified'])->name('home');
 

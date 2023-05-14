@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            //$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            //$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

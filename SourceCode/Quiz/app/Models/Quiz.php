@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Quiz extends Model
 {
@@ -11,8 +12,13 @@ class Quiz extends Model
 
     protected $fillable = [
             'title',
-            'category',
             'quiz_cover',
-            'is_private'
+            'is_private',
+            'category_id'
     ];
+
+    public function category(): BelongsTo {
+        return $this->belongsTo(Category::class);
+    }
+
 }

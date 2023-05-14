@@ -19,8 +19,7 @@ return new class extends Migration
             $table->longText('payload');
             $table->longText('exception');
             $table->timestamp('failed_at')->useCurrent();
-            //$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            //$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+          
         });
     }
 

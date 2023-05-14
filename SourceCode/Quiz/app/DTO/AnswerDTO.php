@@ -6,6 +6,6 @@ class AnswerDTO
 {
     public function __construct(
         public readonly array $answers,
-        public readonly string $correct_answer) {}
+        public readonly array $correct_answer) {}
 }
 

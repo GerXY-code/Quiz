@@ -31,7 +31,11 @@ class AnswerController extends Controller
             'answer_2'       => $request['answer_2'], 
             'answer_3'       => $request['answer_3'], 
             'answer_4'       => $request['answer_4'], 
-            'correct_answer' => $request['correct_answer'], 
+            'correct_answer_1' => $request['correct_answer_1'], 
+            'correct_answer_2' => $request['correct_answer_2'], 
+            'correct_answer_3' => $request['correct_answer_3'], 
+            'correct_answer_4' => $request['correct_answer_4'], 
+
 
         ]);
     }

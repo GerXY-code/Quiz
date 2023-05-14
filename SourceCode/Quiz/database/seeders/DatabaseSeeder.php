@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             QuestionSeeder::class,
             AnswerSeeder::class,
+            CategorySeeder::class,
             QuizSeeder::class,
             ConnectionSeeder::class
         ]);
