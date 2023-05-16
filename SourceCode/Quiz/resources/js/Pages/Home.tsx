@@ -101,16 +101,6 @@ export default function Home({ auth, categories }: HomeProps) {
                                     
                                 />
                             </div>
-
-                            <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-                                {quizzes.map((quiz) => (
-                                    <Link
-                                        key={quiz.id}
-                                        href={`/quiz/${quiz.id}`}
-                                        className="m-5 w-56 h-40  flex justify-center items-end px-4 py-10  bg-[url('/public/uploads/kartyaStilusLight.png')] shadow-2xl 
-                                        dark:bg-[url('/public/uploads/kartyaStilus.png')] bg-cover bg-center
-                                        border border-transparent rounded-md font-bold text-xs text-black dark:text-gray-800 uppercase tracking-widest
-
                             <div className="flex items-center justify-center">
                                 {quizzes && quizzes.length < 1 && (
                                     <h1 className="text-xl">

@@ -31,7 +31,7 @@ module.exports = {
                     200:'#d9a13b ',
                 },
       
-            }
+            },
             height: {
                 128: "32rem",
                 160: "40rem",
