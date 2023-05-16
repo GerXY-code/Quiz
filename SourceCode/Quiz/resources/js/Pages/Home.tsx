@@ -27,7 +27,7 @@ export default function Home({ auth, quizzes, categories }: HomeProps) {
                                     values={categories.map((c) => c.category)}
                                     onSelect={handleOnCategorySelect}
                                     selectedValue={""}
-                                    placeholder="F"
+                                    icon={true}
                                     
                                 />
                             </div>
