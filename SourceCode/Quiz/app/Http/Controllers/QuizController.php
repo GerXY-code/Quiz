@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 use \App\Models\Quiz;
-use \App\Models\Category;
 use \App\DTO\AnswerDTO;
 use \App\DTO\QuestionDTO;
 use \App\DTO\QuizDTO;
 use \App\Models\QuizQuestionAnswers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Output\ConsoleOutput;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 
 class QuizController extends Controller
 {
 
+    private const DEFAULT_LIMIT = 12;
+    private const DEFAULT_PAGE = 1;
     
     public function getById($quizId){
         $queryResult = 
@@ -34,60 +33,81 @@ class QuizController extends Controller
     
     public function getAll($request){
         $queryResult = Quiz::with('category');
-        $page = $request->has('page') ? $request->get('page') : 1;
-        $limit = $request->has('limit') ? $request->get('limit') : 10;
+        $page = $request->has('page') ? $request->get('page') : self::DEFAULT_PAGE;
+        $limit = $request->has('limit') ? $request->get('limit') : self::DEFAULT_LIMIT;
+
         if ($request->has('category')) {
             $category = $request->get('category');
             $queryResult = $queryResult->whereHas('category', function ($q) use ($category) {
                 $q->where('category', $category);
             });
         }
-        return $queryResult->limit($limit)->offset(($page - 1) * $limit)->get();
+
+        $totalPages = ceil($queryResult->count() / $limit);
+        $queryResult = $queryResult->limit($limit)->offset(($page - 1) * $limit)->get();
+
+        return [
+            'quizzes' => $queryResult,
+            'totalPages' => $totalPages,
+        ];
     }
 
    
 
     public function createQuiz(Request $request){
 
-       $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
-       
+        //Quiz inserting
+        $getChosenCategory = DB::table('categories')->where('category','=', $request['category'])->first();
+        Quiz::create([
+            'title'       => $request['title'],
+            'quiz_cover'  => $request['quiz_cover'],
+            'is_private'  => $request['isPrivate'],
+            'category_id' => $getChosenCategory->id,
+        ]);
+
+
+       //Questions inserting
+       for($i = 0; $i<count($request['questions']); $i++){
+            DB::table('questions')->insert([
+                'question' => $request['questions'][$i]['question'],
+            ]);
+       }
+
+       //Answers isnerting
+       $answers = [null,null,null,null];
+       $correct_answers = [null,null,null,null];
+       for($j = 0; $j<count($request['questions']); $j++){
+       for($i = 0; $i<count($request['questions'][$j]['answers']); $i++){
+                $answers[$i] = $request['questions'][$j]['answers'][$i]['answer'];
+                if($request['questions'][$j]['answers'][$i]['isCorrect']){
+                    $correct_answers[$i] = $request['questions'][$j]['answers'][$i]['answer'];
+                }
+
+        }
+        DB::table('answers')->insert([
+            'answer_1'         =>  $answers[0],
+            'answer_2'         =>  $answers[1],
+            'answer_3'         =>  $answers[2],
+            'answer_4'         =>  $answers[3],
+            'correct_answer_1' =>  $correct_answers[0],  
+            'correct_answer_2' =>  $correct_answers[1],  
+            'correct_answer_3' =>  $correct_answers[2],  
+            'correct_answer_4' =>  $correct_answers[3],  
+       ]);
+
        $answers = [null,null,null,null];
        $correct_answers = [null,null,null,null];
 
-       for($i = 0; $i<count($request['questions'][0])-1; $i++){
-            $answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
-       }
-       for($i = 0; $i<count($request['questions'][0])-1; $i++){
-            if($request['questions'][0]['answers'][$i]['isCorrect']){
-                $correct_answers[$i] = $request['questions'][0]['answers'][$i]['answer'];
-            }
-       }
-
-
-     
-
-
-
-        DB::table('answers')->insert([
-                'answer_1'         =>  $answers[0],
-                'answer_2'         =>  $answers[1],
-                'answer_3'         =>  $answers[2],
-                'answer_4'         =>  $answers[3],
-                'correct_answer_1' =>  $correct_answers[0],  
-                'correct_answer_2' =>  $correct_answers[1],  
-                'correct_answer_3' =>  $correct_answers[2],  
-                'correct_answer_4' =>  $correct_answers[3],  
-
-       ]); 
-       
-
-       /*Quiz::create([
-                'title'       => $request['title'],
-                'quiz_cover'  => $request['quiz_cover'],
-                'is_private'  => $request['isPrivate'],
-                'category_id' => $getChosenCategory->id,
-        ]);*/
     }
+    
+
+
+
+
+
+
+      
+}
 
     private function mapToQuizDTO($queryResult) {
         $questions = [];
