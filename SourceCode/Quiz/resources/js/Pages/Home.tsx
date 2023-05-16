@@ -85,18 +85,32 @@ export default function Home({ auth, categories }: HomeProps) {
         <AuthenticatedLayout user={auth.user}>
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg">
-                        <div className="p-5 text-gray-900 dark:text-gray-100 flex flex-col">
-                            <div className="my-4 ml-9 w-44">
+
+                    <div className="bg-sky-600 dark:bg-blue-900 shadow-sm sm:rounded-lg">
+                        <div className="p-5 text-gray-900 dark:text-gray-100 flex justify-center bg-[url('/public/uploads/LightHomeHatter.png')]
+                                         dark:bg-[url('/public/uploads/DarkHomeHatter.png')] bg-cover bg-left-bottom">
+                            <div className=" mt-4 mr-6 " >
+
                                 <SelectDropdown
                                     values={categories.map((c) => c.category)}
                                     onSelect={(value) =>
                                         setSelectedCategory(value)
                                     }
                                     selectedValue={""}
-                                    placeholder="Filter by category"
+                                    icon={true}
+                                    
                                 />
                             </div>
+
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+                                {quizzes.map((quiz) => (
+                                    <Link
+                                        key={quiz.id}
+                                        href={`/quiz/${quiz.id}`}
+                                        className="m-5 w-56 h-40  flex justify-center items-end px-4 py-10  bg-[url('/public/uploads/kartyaStilusLight.png')] shadow-2xl 
+                                        dark:bg-[url('/public/uploads/kartyaStilus.png')] bg-cover bg-center
+                                        border border-transparent rounded-md font-bold text-xs text-black dark:text-gray-800 uppercase tracking-widest
+
                             <div className="flex items-center justify-center">
                                 {quizzes && quizzes.length < 1 && (
                                     <h1 className="text-xl">
@@ -114,10 +128,9 @@ export default function Home({ auth, categories }: HomeProps) {
                                         <Link
                                             key={quiz.id}
                                             href={`/quiz/${quiz.id}`}
-                                            className="w-56 h-40 my-3 mx-auto flex justify-center items-center bg-gray-800 dark:bg-gray-200
-                                        border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest
-                                        hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300
-                                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150"
+                                            className="m-5 w-56 h-40  flex justify-center items-end px-4 py-10  bg-[url('/public/uploads/kartyaStilusLight.png')] shadow-2xl 
+                                        dark:bg-[url('/public/uploads/kartyaStilus.png')] bg-cover bg-center
+                                        border border-transparent rounded-md font-bold text-xs text-black dark:text-gray-800 uppercase tracking-widest"
                                         >
                                             {quiz.title}
                                         </Link>

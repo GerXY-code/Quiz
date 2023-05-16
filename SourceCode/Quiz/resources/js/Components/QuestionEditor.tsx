@@ -8,6 +8,7 @@ import { AnswerRequest } from "@/interfaces/request/AnswerRequest";
 import { QuestionRequest } from "@/interfaces/request/QuestionRequest";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { User } from "@/types";
+import InputLabel from "./InputLabel";
 
 enum QuestionActionType {
     ADD_ANSWER,
@@ -127,85 +128,94 @@ export default function QuestionEditor({
     }
     return (
         <AuthenticatedLayout user={user}>
-            <div className="flex flex-col items-center mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-gray-800">
-                <form className="text-gray-900 dark:text-gray-100">
-                    <div className="p-6 flex flex-col items-center justify-center mt-12 bg-white dark:bg-gray-800">
-                        <div>
-                            <input
-                                value={question}
-                                onChange={(e) => setQuestion(e.target.value)}
-                                className="w-96 h-48 bg-gray-200 dark:bg-gray-700"
-                                type="text"
-                                placeholder="Type your question here..."
-                            ></input>
-                        </div>
-                        <div className="p-4 w-full flex justify-center items-center">
-                            <div className="flex flex-row">
-                                {answers.map((answer, idx) => (
-                                    <div
-                                        className="flex flex-col"
-                                        key={answer.id + "outer-div"}
-                                    >
-                                        <div key={answer.id + "inner-div"}>
-                                            <input
-                                                key={answer.id}
-                                                value={answer.answer}
-                                                className="w-64 h-48 m-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800"
-                                                onChange={(e) => {
-                                                    dispatch({
-                                                        type: QuestionActionType.UPDATE_ANSWER,
-                                                        index: idx,
-                                                        partialValue: {
-                                                            answer: e.target
-                                                                .value,
-                                                        },
-                                                    });
-                                                }}
-                                                placeholder={
-                                                    "Type an answer here..."
-                                                }
-                                            ></input>
-                                            <Checkbox
-                                                checked={answer.isCorrect}
-                                                key={answer.id + "checkbox"}
-                                                className="w-5 h-5"
-                                                disabled={isCheckBoxDisabled(
-                                                    idx
-                                                )}
-                                                onChange={(e) => {
-                                                    dispatch({
-                                                        type: QuestionActionType.UPDATE_ANSWER,
-                                                        index: idx,
-                                                        partialValue: {
-                                                            isCorrect:
-                                                                e.target
-                                                                    .checked,
-                                                        },
-                                                    });
-                                                }}
-                                            ></Checkbox>
-                                        </div>
-                                        <div className="flex items-center justify-center">
-                                            <RemoveButton
-                                                key={answer.id + "remove"}
-                                                onClick={(e) =>
-                                                    handleRemoveAnswer(e, idx)
-                                                }
-                                            ></RemoveButton>
-                                        </div>
-                                    </div>
-                                ))}
+            <div className="flex flex-col items-center  max-w-7xl mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-cyan-950">
+                <div className="flex flex-col mt-4 mb-4 rounded-2xl items-center w-3/4  mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-blue-900">
+                    <form className="italic text-gray-900 dark:text-gray-100">
+                        <div className="p-6 flex flex-col items-center justify-center mt-1 bg-white dark:bg-blue-900">
+                            <div>
+                                <InputLabel>
+
+                                </InputLabel>
                             </div>
-                            <AddButton
-                                className="mb-4 ml-4 w-6 h-6 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded-full"
-                                onClick={(e) => handleAddAnswer(e)}
-                            />
+                            <div>
+                                <input
+                                    value={question}
+                                    onChange={(e) => setQuestion(e.target.value)}
+                                    className="w-[48rem] text-center font-bold text-lg rounded-2xl dark:border-blue-900 hover:border-double hover:border-2 hover:border-sky-300 h-48 bg-gray-200 
+                                    dark:bg-blue-900 dark:focus:bg-blue-950 dark:hover:border-sky-300"
+                                    type="text"
+                                    placeholder="Type your question here..."
+                                ></input>
+                            </div>
+                            <div className="p-4 w-full flex justify-center items-center">
+                                <div className="flex flex-row">
+                                    {answers.map((answer, idx) => (
+                                        <div
+                                            className="flex flex-col bg-amber-500 rounded-2xl ml-4"
+                                            key={answer.id + "outer-div"}
+                                        >
+                                            <div key={answer.id + "inner-div"}>
+                                                <input
+                                                    key={answer.id}
+                                                    value={answer.answer}
+                                                    className="w-40 h-48 m-2 text-gray-500 text-center font-bold text-lg rounded-2xl focus:border-double focus:border-2 focus:border-sky-300 bg-gray-800 
+                                                    dark:bg-amber-500 dark:focus:bg-amber-800 dark:text-black"
+                                                    onChange={(e) => {
+                                                        dispatch({
+                                                            type: QuestionActionType.UPDATE_ANSWER,
+                                                            index: idx,
+                                                            partialValue: {
+                                                                answer: e.target
+                                                                    .value,
+                                                            },
+                                                        });
+                                                    }}
+                                                    placeholder={
+                                                        "Type an answer here..."
+                                                    }
+                                                ></input>
+                                                <Checkbox
+                                                    checked={answer.isCorrect}
+                                                    key={answer.id + "checkbox"}
+                                                    className="w-5 h-5 flex items-center justify-center ml-36"
+                                                    disabled={isCheckBoxDisabled(
+                                                        idx
+                                                    )}
+                                                    onChange={(e) => {
+                                                        dispatch({
+                                                            type: QuestionActionType.UPDATE_ANSWER,
+                                                            index: idx,
+                                                            partialValue: {
+                                                                isCorrect:
+                                                                    e.target
+                                                                        .checked,
+                                                            },
+                                                        });
+                                                    }}
+                                                ></Checkbox>
+                                            </div>
+                                            <div className="flex items-center justify-center mb-4">
+                                                <RemoveButton
+                                                    key={answer.id + "remove"}
+                                                    onClick={(e) =>
+                                                        handleRemoveAnswer(e, idx)
+                                                    }
+                                                ></RemoveButton>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <AddButton
+                                    className="mb-4 ml-4 w-6 h-6 bg-gray-800 dark:bg-gray-200 text-white dark:text-black rounded-full"
+                                    onClick={(e) => handleAddAnswer(e)}
+                                />
+                            </div>
+                            <PrimaryButton onClick={(e) => handleSaveQuestion(e)}>
+                                Save
+                            </PrimaryButton>
                         </div>
-                        <PrimaryButton onClick={(e) => handleSaveQuestion(e)}>
-                            Save
-                        </PrimaryButton>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </AuthenticatedLayout>
     );

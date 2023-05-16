@@ -5,7 +5,7 @@ export default function ThemeSwitcher() {
     return (
         <div>
             <div
-                className="rounded-full hover:cursor-pointer dark:hover:bg-gray-800/50 hover:bg-white/50 p-4"
+                className="rounded-full hover:cursor-pointer p-4"
                 onClick={() => setIsToggled(!isToggled)}
             >
                 {isToggled ? (
@@ -15,7 +15,7 @@ export default function ThemeSwitcher() {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6 text-cyan-50"
+                        className="w-6 h-6 text-yellow-500"
                     >
                         <path
                             strokeLinecap="round"
@@ -30,7 +30,7 @@ export default function ThemeSwitcher() {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6 text-gray-600"
+                        className="w-6 h-6 text-yellow-600"
                     >
                         <path
                             strokeLinecap="round"

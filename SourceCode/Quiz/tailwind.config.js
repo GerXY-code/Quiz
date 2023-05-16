@@ -16,10 +16,27 @@ module.exports = {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },
+
+            colors:{
+                CustomBlue:{
+                    100: '#0077b6',
+                    200: '#023e8a',
+                },
+                CustomOrange:{
+                    100: '#f2a154 ',
+                    200:'#d98c3b ',
+                },
+                CustomYellow:{
+                    100:'#f2c057 ',
+                    200:'#d9a13b ',
+                },
+      
+            }
             height: {
                 128: "32rem",
                 160: "40rem",
             },
+
         },
     },
 
