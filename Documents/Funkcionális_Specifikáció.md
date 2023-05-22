@@ -94,6 +94,9 @@ Képernyőtervek
 -Főoldal:
 ![Képernyőfelvétel (21)](https://github.com/GerXY-code/Quiz/assets/114657677/6a9f89b9-909d-4187-acd8-a7672aa4429f)
 
+-Quiz:
+![Képernyőfelvétel (23)](https://github.com/GerXY-code/Quiz/assets/114657677/a386d678-9dfa-44ad-8531-7cf1a8c90ad2)
+
 
 
 Forgatókönyvek
