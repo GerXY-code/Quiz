@@ -28,7 +28,7 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                                 <div className="flex   justify-center  font-bold text-3xl font-mono">
                                     <h1>{quiz.questions[index].question}</h1>
                                 </div>
-                                <div className="border-2 h-[0.1rem] border-black "/>
+                                <div className="border-2 h-[0.1rem] border-yellow-600 dark:border-yellow-500"/>
                                 <div className="pl-72 justify-center pt-12">
                                     <div className="grid grid-cols-2 gap-4 h-80 w-[40rem]">
                                         {quiz.questions[
