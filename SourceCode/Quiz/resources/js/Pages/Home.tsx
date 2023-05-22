@@ -111,7 +111,7 @@ export default function Home({ auth, categories }: HomeProps) {
                             </div>
                             {quizzes && (
                                 <div
-                                    className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 h-128 overflow-scroll"
+                                    className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 h-128 overflow-y-scroll"
                                     onScroll={handleScroll}
                                 >
                                     {quizzes.map((quiz) => (
