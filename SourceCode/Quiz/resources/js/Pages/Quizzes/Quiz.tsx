@@ -16,7 +16,7 @@ export default function Quiz({ auth, quiz }: QuizProps) {
         <AuthenticatedLayout user={auth.user}>
             <div className="my-20">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white dark:bg-sky-950 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-100">
+                    <div className="bg-sky-100 dark:bg-sky-950 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-100">
                         {!isQuizStarted ? (
                             <StartQuiz
                                 title={quiz.title}
@@ -36,7 +36,7 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                                             <PrimaryButton
                                                 key={ans + idx}
                                                 className="m-1 justify-center dark:bg-[url('/public/uploads/LightHomeHatter.png')] bg-cover bg-left-bottom
-                                                text-[1rem] font-bold"
+                                                text-[1rem] font-bold bg-[url('/public/uploads/DarkHomeHatter.png')] border-4 border-black dark:border-white"
                                                 onClick={() => increaseIndex()}
                                             >
                                                 {ans}
