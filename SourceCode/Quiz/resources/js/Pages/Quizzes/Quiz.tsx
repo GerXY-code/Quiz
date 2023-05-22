@@ -25,10 +25,11 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                             />
                         ) : (
                             <div className="justify-center">
-                                <div className="pt-8 flex  justify-center">
+                                <div className="flex   justify-center  font-bold text-3xl font-mono">
                                     <h1>{quiz.questions[index].question}</h1>
                                 </div>
-                                <div className="p-6 pl-72 justify-center">
+                                <div className="border-2 h-[0.1rem] border-black "/>
+                                <div className="pl-72 justify-center pt-12">
                                     <div className="grid grid-cols-2 gap-4 h-80 w-[40rem]">
                                         {quiz.questions[
                                             index
