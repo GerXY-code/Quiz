@@ -244,7 +244,7 @@ export default function QuizEditor({ auth }: PageProps) {
                         id="title"
                         type="text"
                         value={quiz.title}
-                        className="text-black rounded-xl"
+                        className="text-black rounded-xl "
                         placeholder="Type a quiz title here..."
                         onChange={(e) =>
                             dispatch({
