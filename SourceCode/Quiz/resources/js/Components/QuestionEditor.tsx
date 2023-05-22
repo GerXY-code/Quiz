@@ -131,21 +131,21 @@ export default function QuestionEditor({
             <div className="flex flex-col items-center  max-w-7xl mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-cyan-950">
                 <div className="flex flex-col mt-4 mb-4 rounded-2xl items-center w-3/4  mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-blue-900">
                     <form className="italic text-gray-900 dark:text-gray-100">
-                        <div className="p-6 flex flex-col items-center justify-center mt-1 bg-white dark:bg-blue-900">
+                        <div className="p-6 flex flex-col  items-center justify-center mt-1 bg-white dark:bg-blue-900">
                             <div>
                                 <InputLabel>
-
                                 </InputLabel>
                             </div>
                             <div>
-                                <input
-                                    value={question}
-                                    onChange={(e) => setQuestion(e.target.value)}
-                                    className="w-[48rem] text-center font-bold text-lg rounded-2xl dark:border-blue-900 hover:border-double hover:border-2 hover:border-sky-300 h-48 bg-gray-200 
-                                    dark:bg-blue-900 dark:focus:bg-blue-950 dark:hover:border-sky-300"
-                                    type="text"
-                                    placeholder="Type your question here..."
-                                ></input>
+                              <input
+                                value={question}
+                                onChange={(e) => setQuestion(e.target.value)}
+                                className="w-[48rem] text-center font-bold text-lg rounded-2xl dark:border-blue-900 hover:border-double
+                                 hover:border-2 hover:border-sky-300 h-48 bg-gray-200 dark:bg-blue-900 dark:focus:bg-blue-950 
+                                 dark:hover:border-sky-300"
+                                type="text"
+                                placeholder="Type your question here..."
+                              />
                             </div>
                             <div className="p-4 w-full flex justify-center items-center">
                                 <div className="flex flex-row">
@@ -158,8 +158,11 @@ export default function QuestionEditor({
                                                 <input
                                                     key={answer.id}
                                                     value={answer.answer}
-                                                    className="w-40 h-48 m-2 text-gray-500 text-center font-bold text-lg rounded-2xl focus:border-double focus:border-2 focus:border-sky-300 bg-gray-800 
-                                                    dark:bg-amber-500 dark:focus:bg-amber-800 dark:text-black"
+                                                    className="w-40 h-48 m-2 text-gray-500 text-center font-bold text-s rounded-2xl 
+                                                    hover:border-double hover:border-sky-300 dark:hover:border-sky-300
+                                                    focus:border-double focus:border-2 focus:border-sky-300 bg-gray-800 
+                                                    dark:bg-amber-500 dark:focus:bg-amber-800 dark:text-black whitespace-pre-wrap
+                                                    "
                                                     onChange={(e) => {
                                                         dispatch({
                                                             type: QuestionActionType.UPDATE_ANSWER,
