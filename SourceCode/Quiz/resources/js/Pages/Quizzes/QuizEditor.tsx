@@ -59,7 +59,7 @@ type QuizAction =
       };
 
 const timeLimitsInSecondsToChooseFrom = [
-    5, 10, 15, 20, 30, 45, 60, 90, 120, 180, 240, 300,
+    5, 10, 15, 20, 30, 45, 60,
 ];
 
 function reducer(state: QuizRequest, action: QuizAction): QuizRequest {
@@ -189,7 +189,7 @@ export default function QuizEditor({ auth }: PageProps) {
 
     return (
         <AuthenticatedLayout user={auth.user}>
-            <div className="flex flex-col items-center mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-white dark:bg-gray-800">
+            <div className="flex flex-col items-center mt-12 max-w-7xl mx-auto sm:px-6 lg:px-8 text-black dark:text-white bg-blue-300 dark:bg-gray-800">
                 <div className="flex items-center m-6">
                     <label className="mr-4">Category: </label>
                     <SelectDropdown
@@ -235,7 +235,7 @@ export default function QuizEditor({ auth }: PageProps) {
                 </div>
                 <div
                     className="flex
-                     items-center mb-6"
+                     items-center mb-6 "
                 >
                     <label htmlFor="title" className="mr-4">
                         Title:
@@ -244,7 +244,7 @@ export default function QuizEditor({ auth }: PageProps) {
                         id="title"
                         type="text"
                         value={quiz.title}
-                        className="text-black"
+                        className="text-black rounded-xl"
                         placeholder="Type a quiz title here..."
                         onChange={(e) =>
                             dispatch({
