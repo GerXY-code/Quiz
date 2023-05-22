@@ -91,6 +91,10 @@ Használati esetek
  
 Képernyőtervek
 ------------------
+-Főoldal:
+![Képernyőfelvétel (21)](https://github.com/GerXY-code/Quiz/assets/114657677/6a9f89b9-909d-4187-acd8-a7672aa4429f)
+
+
 
 Forgatókönyvek
 ------------------
