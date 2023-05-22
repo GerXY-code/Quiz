@@ -35,7 +35,7 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                                         ].answer.answers.map((ans, idx) => (
                                             <PrimaryButton
                                                 key={ans + idx}
-                                                className="m-1"
+                                                className="m-1 justify-center"
                                                 onClick={() => increaseIndex()}
                                             >
                                                 {ans}
