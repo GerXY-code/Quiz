@@ -98,7 +98,12 @@ Képernyőtervek
 ![Képernyőfelvétel (23)](https://github.com/GerXY-code/Quiz/assets/114657677/a386d678-9dfa-44ad-8531-7cf1a8c90ad2)
 
 -Quiz létrehozása:
+
 ![Képernyőfelvétel (22)](https://github.com/GerXY-code/Quiz/assets/114657677/6e3d980e-6217-4b26-b8b5-f9bf1245f961)
+
+-Kérdés készítése:
+
+![sda](https://github.com/GerXY-code/Quiz/assets/114657677/487b7d45-9331-4ff6-91d6-29c9c48b8698)
 
 
 
