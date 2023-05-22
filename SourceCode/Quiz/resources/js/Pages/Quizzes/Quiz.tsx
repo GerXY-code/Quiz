@@ -24,12 +24,12 @@ export default function Quiz({ auth, quiz }: QuizProps) {
                                 setIsQuizStarted={setIsQuizStarted}
                             />
                         ) : (
-                            <div>
-                                <div className="pt-8 flex justify-center">
+                            <div className="justify-center">
+                                <div className="pt-8 flex  justify-center">
                                     <h1>{quiz.questions[index].question}</h1>
                                 </div>
-                                <div className="p-6">
-                                    <div className="grid grid-cols-2">
+                                <div className="p-6 pl-72 justify-center">
+                                    <div className="grid grid-cols-2 gap-4 h-80 w-[40rem]">
                                         {quiz.questions[
                                             index
                                         ].answer.answers.map((ans, idx) => (
