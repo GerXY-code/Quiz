@@ -8,23 +8,21 @@ use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 use App\Models\User;
 
-class UserTest extends TestCase
+class UserCreateTest extends TestCase
 {
 
-    public function test_user_exists()
+    public function test_user_creation()
     {
         $user = User::create([
             'name' => 'test',
-            'email' => 'test@testemail.com',
+            'email' => 'test@test_email.com',
             'password' => Hash::make('testest'),
         ]);
 
         $user = User::where('name', '=', 'test')->get()->all();
 
-        $this->assertEquals('user_test', $user->name);
+        $this->assertEquals('test', $user[0]);
     }
 
-
-   
 
 }

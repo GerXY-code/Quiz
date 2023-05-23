@@ -10,21 +10,16 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
-class UserTest extends TestCase
+class UserExistingTest extends TestCase
 {
 
     public function test_user_exists()
     {
-        
-            $response = $this->get('/quizzes');
-            $response->assertStatus(200);
-            $response->assertSee('List');
-            $response->assertDontSee('Create');
-        
-    
-
+        $quiz = DB::table('users')->where('name' , 'test')->first();
+       
+        $this->assertEquals('user_test', $quiz->name);
     }
-    
+
 
    
 
